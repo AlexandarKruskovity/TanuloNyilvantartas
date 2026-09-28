@@ -70,7 +70,7 @@ function renderTable() {
     });
 }
 
-betolt.addEventListener("click", renderTable);
+
 
 mentes.addEventListener("click", function () {
     try {
@@ -80,11 +80,11 @@ mentes.addEventListener("click", function () {
 
         if (tanuloTorles !== -1) {
             tanulok.splice(tanuloTorles, 1);
-            renderTable();
+            
         }
     } catch (e) {
         alert(e.message);
     }
 });
 
-renderTable();
+

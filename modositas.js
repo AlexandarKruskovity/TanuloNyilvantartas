@@ -32,16 +32,16 @@ modositgbtn.addEventListener("click", function () {
        
 
 
-    console.log("Módosítás sikeres!");
-    document.getElementById("nev").value+= vnevKi.value;
-    document.getElementById("knev").value+= knevKi.value;
-    document.getElementById("osztaly").value+= osztalyKi.value
-    document.getElementById("tanulmanyiatlag").value+= tanulmanyiatlagKi.value
+            console.log("Módosítás sikeres!");
+            document.getElementById("nev").value+= vnevKi.value;
+            document.getElementById("knev").value+= knevKi.value;
+            document.getElementById("osztaly").value+= osztalyKi.value
+            document.getElementById("tanulmanyiatlag").value+= tanulmanyiatlagKi.value
 
-    vnevki=document.getElementById("vnev").value;
-    knevki=document.getElementById("knev").value;
-    osztalyki=document.getElementById("osztaly").value;
-    tanulmanyiatlagki=document.getElementById("tanulmanyiatlag").value;
+            vnevki=document.getElementById("vnev").value;
+            knevki=document.getElementById("knev").value;
+            osztalyki=document.getElementById("osztaly").value;
+            tanulmanyiatlagki=document.getElementById("tanulmanyiatlag").value;
 
 
 
