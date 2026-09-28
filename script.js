@@ -12,36 +12,17 @@ let osztaly = document.getElementById("osztaly");
 let tanulmanyiatlag = document.getElementById("tanulmanyiatlag");
 let betolt = document.getElementById("betolt");
 let mentes = document.getElementById("mentes");
-<<<<<<< HEAD
-let torlesgomb = document.getElementById("torlesgomb");
-=======
 let tbody = document.getElementById("tablazat");
->>>>>>> 8d070efc560165bf4fe4fd1ba5994f8b71e47009
 
 vnev.addEventListener("input", function () {
     this.value = this.value.replace(/[^a-zA-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ ]/g, "");
 });
 
-<<<<<<< HEAD
-
-knev.addEventListener("input", function()
-{
-    this.value = this.value.replace(
-        /[^a-zA-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ ]/g,
-        ""
-    );
-});
-
-
-function osztalyBe()
-{
-=======
 knev.addEventListener("input", function () {
     this.value = this.value.replace(/[^a-zA-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ ]/g, "");
 });
 
 function osztalyBe() {
->>>>>>> 8d070efc560165bf4fe4fd1ba5994f8b71e47009
     let osztalySzam = Number(osztaly.value.split(".")[0]);
 
     if (isNaN(osztalySzam)) {
@@ -55,13 +36,7 @@ function osztalyBe() {
     return osztaly.value;
 }
 
-<<<<<<< HEAD
-
-function TanuloAtlag()
-{
-=======
 function TanuloAtlag() {
->>>>>>> 8d070efc560165bf4fe4fd1ba5994f8b71e47009
     let atlag = Number(tanulmanyiatlag.value);
 
     if (isNaN(atlag)) {
