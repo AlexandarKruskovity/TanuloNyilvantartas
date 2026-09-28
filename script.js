@@ -10,8 +10,9 @@ let vnev = document.getElementById("nev");
 let knev = document.getElementById("knev");
 let osztaly = document.getElementById("osztaly");
 let tanulmanyiatlag = document.getElementById("tanulmanyiatlag");
+
 let betolt = document.getElementById("betolt");
-let mentes = document.getElementById("mentes");
+let mentes = document.getElementById("mentesgomb");
 let torlesgomb = document.getElementById("torlesgomb");
 
 vnev.addEventListener("input", function () {
@@ -59,25 +60,8 @@ function TanuloAtlag()
     return atlag;
 }
 
-function renderTable() {
-    tbody.innerHTML = "";
 
-    tanulok.forEach((tanulo) => {
-        let row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${tanulo.vNev}</td>
-            <td>${tanulo.kNev}</td>
-            <td>${tanulo.osztaly}</td>
-            <td>${Number(tanulo["átlag"]).toFixed(2)}</td>
-            <td class="actions">
-                <button type="button">Mentés</button>
-                <button type="button">Törlés</button>
-                <button type="button">Módosít</button>
-            </td>
-        `;
-        tbody.appendChild(row);
-    });
-}
+
 
 
 

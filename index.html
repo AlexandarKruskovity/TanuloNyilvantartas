@@ -4,104 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanulói nyilvántartás</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 2rem;
-            background: #f5f7fb;
-            color: #1f2937;
-        }
-
-        h1 {
-            margin-bottom: 1.5rem;
-        }
-
-        .inputs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        input {
-            padding: 0.7rem 0.8rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            min-width: 180px;
-        }
-
-        button {
-            padding: 0.7rem 1rem;
-            border: none;
-            border-radius: 8px;
-            background: #2563eb;
-            color: white;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-
-        button:hover {
-            background: #1d4ed8;
-        }
-
-        .student-table {
-            width: 100%;
-            max-width: 900px;
-            border-collapse: collapse;
-            background: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .student-table th,
-        .student-table td {
-            border: 1px solid #dbe3ee;
-            padding: 0.75rem 0.9rem;
-            text-align: left;
-        }
-
-        .student-table thead th {
-            background: #e2e8f0;
-            font-weight: 700;
-        }
-
-        .student-table tbody tr:nth-child(even) {
-            background: #f8fafc;
-        }
-
-        .student-table tbody tr:hover {
-            background: #eef6ff;
-        }
-
-        .actions {
-            white-space: nowrap;
-        }
-
-        .actions button {
-            margin-right: 0.35rem;
-            padding: 0.45rem 0.7rem;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tanulói nyilvántartás</h1>
-    
-    <input id="nev" placeholder="Név">
-    <input id="knev" placeholder="Keresztnév">
-    <input id="osztaly" placeholder="Osztály">
-    <input id="tanulmanyiatlag" placeholder="Tanulmányi átlag">
+    <Center><h1>Tanulói nyilvántartás</h1></Center>
+    <div class="inputs" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; margin:auto;">
+        <input id="nev" placeholder="Név">
+        <input id="knev" placeholder="Keresztnév">
+        <input id="osztaly" placeholder="Osztály">
+        <input id="tanulmanyiatlag" placeholder="Tanulmányi átlag">
+    </div>
     <table>
-    <p id="vnevKi"></p>
-    <p id="knevKi"></p>
-    <p id="osztalyKi"></p>
-    <p id="tanulmanyiatlagKi"></p>
-    <button id="betolt">Betöltés</button>
-    <button id="mentes">Mentés</button>
-    <button id="Módosítás">Módosítás</button>
-
-     <table class="student-table" aria-label="Tanulói nyilvántartás">
-        <thead>
-            <tr>
+    
+    
+    <Center><button id="mentes" style="margin:40px; width: 200px;">Mentés</button></Center>
+    
+        
+     <table class="student-table" aria-label="Tanulói nyilvántartás" style="width: 80%; margin: auto; border-collapse: collapse; border: 1px solid #ccc;">
+        <thead >
+            <tr >
                 <th>Név</th>
                 <th>Keresztnév</th>
                 <th>Osztály</th>
@@ -109,7 +30,14 @@
                 <th>Műveletek</th>
             </tr>
         </thead>
-
+        <tbody class="student-table-body" id="student-table-body">
+            
+            
+        </tbody>
+    </table>
+    <Center><button id="megsegomb" style="margin:40px; width: 200px;">Mégse</button></Center>
     <script src="script.js"></script>
+    <script src="modositas.js"></script>
+   
 </body>
 </html>
