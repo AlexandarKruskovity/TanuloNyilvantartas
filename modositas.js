@@ -18,6 +18,7 @@ let tanulmanyiatlagKi = document.getElementById("tanulmanyiatlagKi");
 
 
 modositgbtn.addEventListener("click", function () {
+
     try{
         if (vnevKi.value == "" || knevKi.value == "" || osztalyKi.value == "" || tanulmanyiatlagKi.value == "") {
             throw new Error("Minden mezőt ki kell tölteni!");
@@ -28,7 +29,10 @@ modositgbtn.addEventListener("click", function () {
         else if(!isNaN(vnevKi.value) || !isNan(knev.value)){
             throw new Error("A név mezőbe nem lehet számot írni!");
         }
+       
 
+
+    console.log("Módosítás sikeres!");
     document.getElementById("nev").value+= vnevKi.value;
     document.getElementById("knev").value+= knevKi.value;
     document.getElementById("osztaly").value+= osztalyKi.value
