@@ -85,28 +85,20 @@
 </head>
 <body>
     <h1>Tanulói nyilvántartás</h1>
+    
+    <input id="nev" placeholder="Név">
+    <input id="knev" placeholder="Keresztnév">
+    <input id="osztaly" placeholder="Osztály">
+    <input id="tanulmanyiatlag" placeholder="Tanulmányi átlag">
+    <table>
+<p id="vnevKi"></p>
+<p id="knevKi"></p>
+<p id="osztalyKi"></p>
+<p id="tanulmanyiatlagKi"></p>
+<button id="betolt">Betöltés</button>
+<button id="mentes">Mentés</button>
+<button id="Módosítás">Módosítás</button>
 
-    <div class="inputs">
-        <input id="nev" placeholder="Név">
-        <input id="knev" placeholder="Keresztnév">
-        <input id="osztaly" placeholder="Osztály">
-        <input id="tanulmanyiatlag" placeholder="Tanulmányi átlag">
-        
-        <button id="mentes" type="button">Mentés</button>
-        
-    </div>
-
-    <table class="student-table" aria-label="Tanulói nyilvántartás">
-        <thead>
-            <tr>
-                <th>Név</th>
-                <th>Keresztnév</th>
-                <th>Osztály</th>
-                <th>Tanulmányi átlag</th>
-                <th>Műveletek</th>
-            </tr>
-        </thead>
-        <tbody id="tablazat"></tbody>
     </table>
 
     <script src="script.js"></script>
