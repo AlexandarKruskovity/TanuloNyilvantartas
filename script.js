@@ -5,3 +5,10 @@ const tanulok=[
 {vNev:"Eszter", kNev:"Tóth", kor:16, átlag: 3.22, osztaly:"10.A"},
 {vNev:"Máté", kNev:"Nagy", kor:17, átlag: 5.00, osztaly:"10.A"}
 ]
+let vnev=document.getElementById("nev");
+let knev=document.getElementById("knev");
+let osztaly=document.getElementById("osztaly");
+let tanulmanyiatlag=document.getElementById("tanulmanyiatlag");
+let table=document.querySelector("table");
+
+
