@@ -1,8 +1,8 @@
 ﻿let tanulok = [
-    { vNev: "János", kNev: "Kovács", kor: 16, "átlag": 4.53, osztaly: "10.A" },
+    { vNev: "János", kNev: "Kovács", kor: 16, "átlag": 4.5, osztaly: "10.A" },
     { vNev: "Anna", kNev: "Szabó", kor: 17, "átlag": 3.7, osztaly: "11.E" },
-    { vNev: "Péter", kNev: "Nagy", kor: 15, "átlag": 4.02, osztaly: "9.D" },
-    { vNev: "Eszter", kNev: "Tóth", kor: 16, "átlag": 3.22, osztaly: "13.C" },
+    { vNev: "Péter", kNev: "Nagy", kor: 15, "átlag": 4.0, osztaly: "9.D" },
+    { vNev: "Eszter", kNev: "Tóth", kor: 16, "átlag": 3.2, osztaly: "13.C" },
     { vNev: "Máté", kNev: "Nagy", kor: 17, "átlag": 5.0, osztaly: "12.B" }
 ];
 
