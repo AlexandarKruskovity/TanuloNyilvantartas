@@ -5,3 +5,4 @@ const tanulok=[
 {vNev:"Eszter", kNev:"Tóth", kor:16, átlag: 3.22, osztaly:"10.A"},
 {vNev:"Máté", kNev:"Nagy", kor:17, átlag: 5.00, osztaly:"10.A"}
 ]
+let 
