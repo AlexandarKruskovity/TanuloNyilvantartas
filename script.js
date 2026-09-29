@@ -125,33 +125,36 @@ tablazatfeltoltese();
 
 
 
-table.addEventListener("click", function (event) {
-    const torlesGomb = event.target.closest(".torlesgomb");
 
-    if (!torlesGomb) {
-        return;
-    }
 
-    try {
-        const sor = torlesGomb.closest("tr");
 
-        if (!sor) {
-            throw new Error("Nem található a sor!");
-        }
 
-        const sorok = Array.from(table.querySelectorAll("tbody tr"));
-        const sorIndex = sorok.indexOf(sor);
 
-        if (sorIndex === -1) {
-            throw new Error("Nincs ilyen tanuló!");
-        }
+
+
+const torlesGomb = document.querySelectorAll('.torlesgomb');
+try {
+        knev.value = "";
+        osztaly.value = "";
+        tanulmanyiatlag.value = "";
+} catch (e) {
+        alert(e.message);
+}
+
+
+torlesGomb.forEach(gomb => {
+
+    gomb.addEventListener("click", function () {
+
+        let sor = gomb.closest("tr");
+
+        let sorIndex = sor.rowIndex - 1;
 
         tanulok.splice(sorIndex, 1);
+
         sor.remove();
 
         alert("A tanuló törölve!");
-    }
-    catch (e) {
-        alert(e.message);
-    }
+    });
+
 });
