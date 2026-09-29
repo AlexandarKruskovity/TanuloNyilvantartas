@@ -1,14 +1,17 @@
+
+
+
 function tablazatfeltoltese() {
     document.getElementById("student-table-body").innerHTML = tanulok.map((tanulo) => `
         <tr>
-            <td id="vnevKi">${tanulo.vNev}</td>
-            <td id="knevKi">${tanulo.kNev}</td>
-            <td id="osztalyKi">${tanulo.osztaly}</td>
-            <td id="tanulmanyiatlagKi">${tanulo["átlag"]}</td>
+            <td class="vnevKi">${tanulo.vNev}</td>
+            <td class="knevKi">${tanulo.kNev}</td>
+            <td class="osztalyKi">${tanulo.osztaly}</td>
+            <td class="tanulmanyiatlagKi">${tanulo["átlag"]}</td>
             <td class="actions">
-                <button id="modositgomb">Módosítás</button>
-                <button id="torlesgomb">Törlés</button>
-                <button id="mentesgomb">Mentés</button>
+                <button class="modositgomb">Módosítás</button>
+                <button class="torlesgomb">Törlés</button>
+                <button class="modositas_mentese">Mentés</button>
             </td>
         </tr>
     `).join("");
@@ -16,55 +19,73 @@ function tablazatfeltoltese() {
 
 tablazatfeltoltese();
 
-let modositbtn = document.getElementById("modositgomb");
-let megsebtn = document.getElementById("megsegomb");
+
+
+
+
+
+
+let modositbtn = document.getElementsByClassName("modositgomb");
+let megsebtn = document.getElementsByClassName("megsegomb");
 megsebtn.style.display = "none";
 
 modositbtn.addEventListener("click", function () {
 
+    //document.getElementById("body").innerHTML = `<button id="megsegomb">Mégse</button>`;
     megsebtn.style.display = "block";
-    let vnev = document.getElementById("vnev");
-    let knev = document.getElementById("knev");
-    let osztaly = document.getElementById("osztaly");
-    let tanulmanyiatlag = document.getElementById("tanulmanyiatlag");
+    
+
+    document.getElementsByClassName("vnevKi").innerHTML = `<input type="text" class="vnev_modify" >`;
+    document.getElementsByClassName("knevKi").innerHTML = `<input type="text" class="knev_modify" >`;
+    document.getElementsByClassName("osztalyKi").innerHTML = `<input type="text" class="osztaly_modify" >`;
+    document.getElementsByClassName("tanulmanyiatlagKi").innerHTML = `<input type="text" class="tanulmanyiatlag_modify" >`;
+
+            let vnevki_m = document.getElementsByClassName("vnev_modify");
+            let knevki_m = document.getElementsByClassName("knev_modify");
+            let osztalyki_m = document.getElementsByClassName("osztaly_modify");
+            let tanulmanyiatlagki_m = document.getElementsByClassName("tanulmanyiatlag_modify");
+    
 
 
-    document.getElementById("vnevKi").innerHTML = `<input type="text" id="vnev_modify" >`;
-    document.getElementById("knevKi").innerHTML = `<input type="text" id="knev_modify" >`;
-    document.getElementById("osztalyKi").innerHTML = `<input type="text" id="osztaly_modify" >`;
-    document.getElementById("tanulmanyiatlagKi").innerHTML = `<input type="text" id="tanulmanyiatlag_modify" >`;
 
-    document.getElementById("body").innerHTML = `<button id="megsegomb">Mégse</button>`;
+    
 
+    
+    
+})
+
+megsegomb.addEventListener("click", function () {
+    megsebtn.style.display = "none";
+    tablazatfeltoltese();
+});
+
+
+
+document.getElementById("modositas_mentese").addEventListener("click", function () {
 
 
     try{
 
-        if (nev.value == "" || knev.value == "" || osztaly.value == "" || tanulmanyiatlag.value == "") {
+        if (vnevki_m.value == "" || knevki_m.value == "" || osztalyki_m.value == "" || tanulmanyiatlagki_m.value == "") {
             throw new Error("Minden mezőt ki kell tölteni!");
         }
-        else if(!isNaN(tanulmanyiatlagKi.value)){
+        else if(!isNaN(tanulmanyiatlagki_m.value)){
             throw new Error("A tanulmányi átlag mezőbe csak számot lehet írni!");
         }
-        else if(!isNaN(vnevKi.value) || !isNaN(knev.value)){
+        else if(!isNaN(vnevki_m.value) || !isNaN(knevki_m.value)){
             throw new Error("A név mezőbe nem lehet számot írni!");
         }
-       
+            let vnevki_m = document.getElementsByClassName("vnev_modify");
+            let knevki_m = document.getElementsByClassName("knev_modify");
+            let osztalyki_m = document.getElementsByClassName("osztaly_modify");
+            let tanulmanyiatlagki_m = document.getElementsByClassName("tanulmanyiatlag_modify");
 
 
             console.log("Módosítás sikeres!");
-            document.getElementById("nev").value+= vnevKi.value;
-            document.getElementById("knev").value+= knevKi.value;
-            document.getElementById("osztaly").value+= osztalyKi.value
-            document.getElementById("tanulmanyiatlag").value+= tanulmanyiatlagKi.value
-
-            vnevki=document.getElementById("vnev").value;
-            knevki=document.getElementById("knev").value;
-            osztalyki=document.getElementById("osztaly").value;
-            tanulmanyiatlagki=document.getElementById("tanulmanyiatlag").value;
-
-
-
+            document.getElementsByClassName("vnevKi").value+= vnev_modify.value;
+            document.getElementsByClassName("knevKi").value+= knev_modify.value;
+            document.getElementsByClassName("osztalyKi").value+= osztaly_modify.value;
+            document.getElementsByClassName("tanulmanyiatlagKi").value+= tanulmanyiatlag_modify.value;
 
 
     }
@@ -72,18 +93,8 @@ modositbtn.addEventListener("click", function () {
         console.log("Hiba: "+""+e.message)
     }
 
-    
-    
+            
 })
-
-megsebtn.addEventListener("click", function () {
-    megsebtn.style.display = "none";
-    tablazatfeltoltese();
-});
-
-
-
-
 
 
 
