@@ -38,58 +38,66 @@ modositbtn.forEach(modositbtn =>
     let tanulmanyiatlagKi = sor.querySelector(".tanulmanyiatlagKi");
 
 
-    vnevKi.innerHTML = `<input type="text" class="vnev_modify">`;
-    knevKi.innerHTML = `<input type="text" class="knev_modify">`;
-    osztalyKi.innerHTML = `<input type="text" class="osztaly_modify" >`;
-    tanulmanyiatlagKi.innerHTML = `<input type="text" class="tanulmanyiatlag_modify">`;
+    vnevKi.innerHTML = `<input type="text" id="vnev_modify">`;
+    knevKi.innerHTML = `<input type="text" id="knev_modify">`;
+    osztalyKi.innerHTML = `<input type="text" id="osztaly_modify" >`;
+    tanulmanyiatlagKi.innerHTML = `<input  id="tanulmanyiatlag_modify">`;
 
- 
     
 }))
 
+// let megsegomb = document.getElementById("megsegomb");
+
+// megsegomb.addEventListener("click", function () {
+//    megsegomb.style.display = "none";
+//    tablazatfeltoltese();
+// });
 
 
-megsegomb.addEventListener("click", function () {
-   megsebtn.style.display = "none";
-   tablazatfeltoltese();
-});
+let modositas_mentese = document.querySelectorAll(".modositas_mentese");
+
+modositas_mentese.forEach(modositas_mentese => modositas_mentese.addEventListener("click", function () {
+
+    try{
+        let vnevki_m = document.getElementById("vnev_modify");
+        let knevki_m = document.getElementById("knev_modify");
+        let osztalyki_m = document.getElementById("osztaly_modify");
+        let tanulmanyiatlagki_m = document.getElementById("tanulmanyiatlag_modify");
 
 
-
-// document.getElementById("modositas_mentese").addEventListener("click", function () {
-
-
-//     try{
-
-//         if (vnevki_m.value == "" || knevki_m.value == "" || osztalyki_m.value == "" || tanulmanyiatlagki_m.value == "") {
-//             throw new Error("Minden mezőt ki kell tölteni!");
-//         }
-//         else if(!isNaN(tanulmanyiatlagki_m.value)){
-//             throw new Error("A tanulmányi átlag mezőbe csak számot lehet írni!");
-//         }
-//         else if(!isNaN(vnevki_m.value) || !isNaN(knevki_m.value)){
-//             throw new Error("A név mezőbe nem lehet számot írni!");
-//         }
-//             let vnevki_m = document.getElementsByClassName("vnev_modify");
-//             let knevki_m = document.getElementsByClassName("knev_modify");
-//             let osztalyki_m = document.getElementsByClassName("osztaly_modify");
-//             let tanulmanyiatlagki_m = document.getElementsByClassName("tanulmanyiatlag_modify");
+        if (vnevki_m.value == "" || knevki_m.value == "" || osztalyki_m.value == "" || tanulmanyiatlagki_m.value == "") {
+            throw new Error("Minden mezőt ki kell tölteni!");
+        }
+        else if(isNaN(tanulmanyiatlagki_m.value)){
+            throw new Error("A tanulmányi átlag mezőbe csak számot lehet írni!");
+        }
+        else if(!isNaN(vnevki_m.value) || !isNaN(knevki_m.value)){
+            throw new Error("A név mezőbe nem lehet számot írni!");
+        }
+  
 
 
-//             console.log("Módosítás sikeres!");
-//             document.getElementsByClassName("vnevKi").value+= vnev_modify.value;
-//             document.getElementsByClassName("knevKi").value+= knev_modify.value;
-//             document.getElementsByClassName("osztalyKi").value+= osztaly_modify.value;
-//             document.getElementsByClassName("tanulmanyiatlagKi").value+= tanulmanyiatlag_modify.value;
+            console.log("Módosítás sikeres!");
+            console.log("Vezetéknév: " + vnevki_m.value);
+            console.log("Keresztnév: " + knevki_m.value);
+            console.log("Osztály: " + osztalyki_m.value);
+            console.log("Tanulmányi átlag: " + tanulmanyiatlagki_m.value);
 
+            tanulok.push({
+                vNev: vnevki_m.value,
+                kNev: knevki_m.value,
+                osztaly: osztalyki_m.value,
+                átlag: tanulmanyiatlagki_m.value
+            }); 
+            tablazatfeltoltese();
 
-//     }
-//     catch(e){
-//         console.log("Hiba: "+""+e.message)
-//     }
+    }
+    catch(e){
+        console.log("Hiba: "+""+e.message)
+    }
 
             
-// })
+}))
 
 
 
