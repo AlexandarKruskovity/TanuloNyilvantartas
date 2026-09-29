@@ -60,24 +60,32 @@ function TanuloAtlag()
     return atlag;
 }
 
+ 
 
-
-
-
-
-mentes.addEventListener("click", function () {
+torlesgomb.onclick = function () {
     try {
+        let vnevKi = vnev.value;
+        let knevKi = knev.value;
+        let osztalyKi = osztaly.value;
+
         let tanuloTorles = tanulok.findIndex(
-            (tanulo) => tanulo.vNev === vnev.value && tanulo.kNev === knev.value && tanulo.osztaly === osztalyBe()
+            tanulo =>
+                tanulo.vNev === vnevKi &&
+                tanulo.kNev === knevKi &&
+                tanulo.osztaly === osztalyKi
         );
 
         if (tanuloTorles !== -1) {
             tanulok.splice(tanuloTorles, 1);
-            
+            alert("A tanuló törölve!");
+        } else {
+            alert("Nincs ilyen tanuló!");
         }
+
     } catch (e) {
         alert(e.message);
     }
-});
+};
+
 
 
