@@ -24,18 +24,24 @@ tablazatfeltoltese();
 
 
 let modositbtn = document.querySelectorAll(".modositgomb");
-let megsebtn = document.getElementsByClassName("megsegomb");
-//megsebtn.style.display = "none";
+
+
 
 modositbtn.forEach(modositbtn => 
     
     modositbtn.addEventListener("click", function () {
-
     
-    document.getElementsByClassName("vnevKi").innerHTML = `<input type="text" class="vnev_modify" >`;
-    document.getElementsByClassName("knevKi").innerHTML = `<input type="text" class="knev_modify" >`;
-    document.getElementsByClassName("osztalyKi").innerHTML = `<input type="text" class="osztaly_modify" >`;
-    document.getElementsByClassName("tanulmanyiatlagKi").innerHTML = `<input type="text" class="tanulmanyiatlag_modify" >`;
+    let sor=modositbtn.closest("tr");
+    let vnevKi = sor.querySelector(".vnevKi");
+    let knevKi = sor.querySelector(".knevKi");
+    let osztalyKi = sor.querySelector(".osztalyKi");
+    let tanulmanyiatlagKi = sor.querySelector(".tanulmanyiatlagKi");
+
+
+    vnevKi.innerHTML = `<input type="text" class="vnev_modify">`;
+    knevKi.innerHTML = `<input type="text" class="knev_modify">`;
+    osztalyKi.innerHTML = `<input type="text" class="osztaly_modify" >`;
+    tanulmanyiatlagKi.innerHTML = `<input type="text" class="tanulmanyiatlag_modify">`;
 
  
     
@@ -44,8 +50,8 @@ modositbtn.forEach(modositbtn =>
 
 
 megsegomb.addEventListener("click", function () {
-    megsebtn.style.display = "none";
-    tablazatfeltoltese();
+   megsebtn.style.display = "none";
+   tablazatfeltoltese();
 });
 
 
