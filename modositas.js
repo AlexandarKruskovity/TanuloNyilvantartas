@@ -1,6 +1,4 @@
 
-
-
 function tablazatfeltoltese() {
     document.getElementById("student-table-body").innerHTML = tanulok.map((tanulo) => `
         <tr>
@@ -25,34 +23,25 @@ tablazatfeltoltese();
 
 
 
-let modositbtn = document.getElementsByClassName("modositgomb");
+let modositbtn = document.querySelectorAll(".modositgomb");
 let megsebtn = document.getElementsByClassName("megsegomb");
-megsebtn.style.display = "none";
+//megsebtn.style.display = "none";
 
-modositbtn.addEventListener("click", function () {
-
-    //document.getElementById("body").innerHTML = `<button id="megsegomb">Mégse</button>`;
-    megsebtn.style.display = "block";
+modositbtn.forEach(modositbtn => 
     
+    modositbtn.addEventListener("click", function () {
 
+    
     document.getElementsByClassName("vnevKi").innerHTML = `<input type="text" class="vnev_modify" >`;
     document.getElementsByClassName("knevKi").innerHTML = `<input type="text" class="knev_modify" >`;
     document.getElementsByClassName("osztalyKi").innerHTML = `<input type="text" class="osztaly_modify" >`;
     document.getElementsByClassName("tanulmanyiatlagKi").innerHTML = `<input type="text" class="tanulmanyiatlag_modify" >`;
 
-            let vnevki_m = document.getElementsByClassName("vnev_modify");
-            let knevki_m = document.getElementsByClassName("knev_modify");
-            let osztalyki_m = document.getElementsByClassName("osztaly_modify");
-            let tanulmanyiatlagki_m = document.getElementsByClassName("tanulmanyiatlag_modify");
+ 
     
+}))
 
 
-
-    
-
-    
-    
-})
 
 megsegomb.addEventListener("click", function () {
     megsebtn.style.display = "none";
@@ -61,40 +50,40 @@ megsegomb.addEventListener("click", function () {
 
 
 
-document.getElementById("modositas_mentese").addEventListener("click", function () {
+// document.getElementById("modositas_mentese").addEventListener("click", function () {
 
 
-    try{
+//     try{
 
-        if (vnevki_m.value == "" || knevki_m.value == "" || osztalyki_m.value == "" || tanulmanyiatlagki_m.value == "") {
-            throw new Error("Minden mezőt ki kell tölteni!");
-        }
-        else if(!isNaN(tanulmanyiatlagki_m.value)){
-            throw new Error("A tanulmányi átlag mezőbe csak számot lehet írni!");
-        }
-        else if(!isNaN(vnevki_m.value) || !isNaN(knevki_m.value)){
-            throw new Error("A név mezőbe nem lehet számot írni!");
-        }
-            let vnevki_m = document.getElementsByClassName("vnev_modify");
-            let knevki_m = document.getElementsByClassName("knev_modify");
-            let osztalyki_m = document.getElementsByClassName("osztaly_modify");
-            let tanulmanyiatlagki_m = document.getElementsByClassName("tanulmanyiatlag_modify");
-
-
-            console.log("Módosítás sikeres!");
-            document.getElementsByClassName("vnevKi").value+= vnev_modify.value;
-            document.getElementsByClassName("knevKi").value+= knev_modify.value;
-            document.getElementsByClassName("osztalyKi").value+= osztaly_modify.value;
-            document.getElementsByClassName("tanulmanyiatlagKi").value+= tanulmanyiatlag_modify.value;
+//         if (vnevki_m.value == "" || knevki_m.value == "" || osztalyki_m.value == "" || tanulmanyiatlagki_m.value == "") {
+//             throw new Error("Minden mezőt ki kell tölteni!");
+//         }
+//         else if(!isNaN(tanulmanyiatlagki_m.value)){
+//             throw new Error("A tanulmányi átlag mezőbe csak számot lehet írni!");
+//         }
+//         else if(!isNaN(vnevki_m.value) || !isNaN(knevki_m.value)){
+//             throw new Error("A név mezőbe nem lehet számot írni!");
+//         }
+//             let vnevki_m = document.getElementsByClassName("vnev_modify");
+//             let knevki_m = document.getElementsByClassName("knev_modify");
+//             let osztalyki_m = document.getElementsByClassName("osztaly_modify");
+//             let tanulmanyiatlagki_m = document.getElementsByClassName("tanulmanyiatlag_modify");
 
 
-    }
-    catch(e){
-        console.log("Hiba: "+""+e.message)
-    }
+//             console.log("Módosítás sikeres!");
+//             document.getElementsByClassName("vnevKi").value+= vnev_modify.value;
+//             document.getElementsByClassName("knevKi").value+= knev_modify.value;
+//             document.getElementsByClassName("osztalyKi").value+= osztaly_modify.value;
+//             document.getElementsByClassName("tanulmanyiatlagKi").value+= tanulmanyiatlag_modify.value;
+
+
+//     }
+//     catch(e){
+//         console.log("Hiba: "+""+e.message)
+//     }
 
             
-})
+// })
 
 
 
