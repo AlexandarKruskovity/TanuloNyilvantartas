@@ -1,10 +1,10 @@
 ﻿let tanulok = [
 
-    {vNev:"János", kNev:"Kovács", kor:16, átlag:4.53, osztaly:"10.A"},
+    {vNev:"János", kNev:"Kovács", kor:16, átlag:4.5, osztaly:"10.A"},
     {vNev:"Anna", kNev:"Szabó", kor:17, átlag:3.7, osztaly:"11.E"},
-    {vNev:"Péter", kNev:"Nagy", kor:15, átlag:4.02, osztaly:"9.D"},
-    {vNev:"Eszter", kNev:"Tóth", kor:16, átlag:3.22, osztaly:"13.C"},
-    {vNev:"Máté", kNev:"Nagy", kor:17, átlag:5.00, osztaly:"12.B"}
+    {vNev:"Péter", kNev:"Nagy", kor:15, átlag:4, osztaly:"9.D"},
+    {vNev:"Eszter", kNev:"Tóth", kor:16, átlag:3.2, osztaly:"13.C"},
+    {vNev:"Máté", kNev:"Nagy", kor:17, átlag:5, osztaly:"12.B"}
 
 ];
 
@@ -74,84 +74,14 @@ function TanuloAtlag()
 
 
 
-mentes.addEventListener("click", function()
-{
-    try
-    {
-        if (vnev.value === "" || knev.value === "")
-        {
-            throw new Error("A név megadása kötelező!");
-        }
-
-        let ujTanulo = {
-            vNev: vnev.value,
-            kNev: knev.value,
-            osztaly: osztalyBe(),
-            átlag: TanuloAtlag()
-        };
-
-        tanulok.push(ujTanulo);
-
-        alert("A tanuló sikeresen mentve!");
-
-        function tablazatfeltoltese() {
-    document.getElementById("student-table-body").innerHTML = tanulok.map((tanulo) => `
-        <tr>
-            <td class="vnevKi">${tanulo.vNev}</td>
-            <td class="knevKi">${tanulo.kNev}</td>
-            <td class="osztalyKi">${tanulo.osztaly}</td>
-            <td class="tanulmanyiatlagKi">${tanulo["átlag"]}</td>
-            <td class="actions">
-                <button class="modositgomb">Módosítás</button>
-                <button class="torlesgomb">Törlés</button>
-                <button class="modositas_mentese">Mentés</button>
-            </td>
-        </tr>
-    `).join("");
-}
-
-tablazatfeltoltese();
-
-        vnev.value = "";
-        knev.value = "";
-        osztaly.value = "";
-        tanulmanyiatlag.value = "";
-    }
-    catch (e)
-    {
-        alert(e.message);
-    }
-});
 
 
 
-table.addEventListener("click", function (event) {
-    const torlesGomb = event.target.closest(".torlesgomb");
 
-    if (!torlesGomb) {
-        return;
-    }
 
-    try {
-        const sor = torlesGomb.closest("tr");
 
-        if (!sor) {
-            throw new Error("Nem található a sor!");
-        }
 
-        const sorok = Array.from(table.querySelectorAll("tbody tr"));
-        const sorIndex = sorok.indexOf(sor);
 
-        if (sorIndex === -1) {
-            throw new Error("Nincs ilyen tanuló!");
-        }
 
-        tanulok.splice(sorIndex, 1);
-        sor.remove();
 
-        alert("A tanuló törölve!");
-    }
-    catch (e) {
-        alert(e.message);
-    }
-});
+
