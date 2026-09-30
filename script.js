@@ -63,15 +63,17 @@ mentes.addEventListener("click", function()
         }
 
 
-
-
         tanulok.push({
-            vNev: vnev.value,
-            kNev: knev.value,
-            osztaly: osztaly.value,
-            átlag: TanuloAtlag()
-        });
+                    vNev: vnev.value,
+                    kNev: knev.value,
+                    osztaly: osztaly.value,
+                    átlag: TanuloAtlag()
+                });
+
         tablazatfeltoltese();
+
+
+
         vnev.value = "";
         knev.value = "";
         osztaly.value = "";
@@ -89,6 +91,16 @@ mentes.addEventListener("click", function()
 })
 
 
+let tanulok_szama = document.getElementById("tanulok_szama");
+let osztalyatlag = document.getElementById("osztalyatlag");
+let legjobb_tanulo = document.getElementById("legjobb_tanulo");
+
+
+tanulok_szama.textContent+= tanulok.length;
+
+frissit.addEventListener("click", function() {
+    tanulok_szama.textContent+= tanulok.length;
+})
 
 
 
