@@ -14,15 +14,17 @@
         <input id="osztaly" placeholder="Osztály">
         <input id="tanulmanyiatlag" placeholder="Tanulmányi átlag">
     </div>
-    <table>
+    <table id="mytable">
     
     
     <Center><button id="mentes" style="margin:40px; width: 200px;">Mentés</button></Center>
-    
+    <center><input type="text" id="myInput" onkeyup="kereses()" placeholder="Tanuló keresése..." title="Type in a name"></center>
+
+    <br>
         
      <table class="student-table" aria-label="Tanulói nyilvántartás" style="width: 80%; margin: auto; border-collapse: collapse; border: 1px solid #ccc;">
         <thead >
-            <tr >
+            <tr>
                 <th>Keresztnév</th>
                 <th>Vezetéktnév</th>
                 <th>Osztály</th>
