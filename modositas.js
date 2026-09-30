@@ -213,8 +213,48 @@ torlesGomb.forEach(gomb => {
     }
 
 
+    // MENTÉS
+    if (e.target.classList.contains("modositas_mentese")) {
 
-    
+        let sor = e.target.closest("tr");
+
+        let vnev = sor.querySelector(".vnev_modify");
+        let knev = sor.querySelector(".knev_modify");
+        let osztaly = sor.querySelector(".osztaly_modify");
+        let atlag = sor.querySelector(".tanulmanyiatlag_modify");
+
+        if (!vnev || !knev || !osztaly || !atlag) {
+            return;
+        }
+
+        if (
+            vnev.value === "" ||
+            knev.value === "" ||
+            osztaly.value === "" ||
+            atlag.value === ""
+        ) {
+            alert("Minden mezőt ki kell tölteni!");
+            return;
+        }
+
+        if (isNaN(atlag.value)) {
+            alert("A tanulmányi átlag mezőbe csak számot lehet írni!");
+            return;
+        }
+
+        let sorIndex = sor.rowIndex - 1;
+
+        tanulok[sorIndex] = {
+            vNev: vnev.value,
+            kNev: knev.value,
+            osztaly: osztaly.value,
+            átlag: Number(atlag.value)
+        };
+
+        tablazatfeltoltese();
+
+        alert("A módosítás sikeres!");
+    }
 
 });
 
