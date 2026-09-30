@@ -83,12 +83,25 @@ modositas_mentese.forEach(modositas_mentese => modositas_mentese.addEventListene
             console.log("Osztály: " + osztalyki_m.value);
             console.log("Tanulmányi átlag: " + tanulmanyiatlagki_m.value);
 
-            tanulok.push({
-                vNev: vnevki_m.value,
-                kNev: knevki_m.value,
-                osztaly: osztalyki_m.value,
-                átlag: tanulmanyiatlagki_m.value
-            }); 
+
+            let sor=modositbtn.closest("tr");
+            sor.querySelector(".vnevKi").textContent = vnevki_m.value;
+            sor.querySelector(".knevKi").textContent = knevki_m.value;
+            sor.querySelector(".osztalyKi").textContent = osztalyki_m.value;
+            sor.querySelector(".tanulmanyiatlagKi").textContent = tanulmanyiatlagki_m.value;
+
+
+            
+
+
+
+
+            // tanulok.push({
+            //     vNev: vnevki_m.value,
+            //     kNev: knevki_m.value,
+            //     osztaly: osztalyki_m.value,
+            //     átlag: tanulmanyiatlagki_m.value
+            // }); 
             tablazatfeltoltese();
 
     }
