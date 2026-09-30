@@ -105,9 +105,7 @@ tabla.addEventListener("click", function (e) {
         let osztaly = sor.querySelector(".osztaly_modify");
         let atlag = sor.querySelector(".tanulmanyiatlag_modify");
 
-        if (!vnev || !knev || !osztaly || !atlag) {
-            return;
-        }
+       
 
         if (
             vnev.value === "" ||
@@ -139,12 +137,29 @@ tabla.addEventListener("click", function (e) {
     }
 
 });
+function kereses() {
+    let input = document.getElementById("myInput");
+    let filter = input.value.toUpperCase();
+    let table = document.getElementById("mytable");
+    let sorok = table.getElementsByTagName("tr");
 
+    for (let i = 1; i < sorok.length; i++) {
+        let cells = sorok[i].getElementsByTagName("td");
+        if (cells.length > 0) {
 
-
-
-
-
+            let vnev = cells[0].textContent.toUpperCase();
+            let knev = cells[1].textContent.toUpperCase();
+            let osztaly = cells[2].textContent.toUpperCase();
+            let atlag = cells[3].textContent.toUpperCase();
+            if (vnev.indexOf(filter) > -1 || knev.indexOf(filter) > -1 || osztaly.indexOf(filter) > -1 || atlag.indexOf(filter) > -1) {
+                sorok[i].style.display = "";
+            }
+            else {
+                sorok[i].style.display = "none";
+            }
+        }
+    }
+}
 
 
 

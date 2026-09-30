@@ -1,10 +1,25 @@
 ﻿let tanulok = [
 
-    {vNev:"János", kNev:"Kovács", kor:16, átlag:4.5, osztaly:"10.A"},
-    {vNev:"Anna", kNev:"Szabó", kor:17, átlag:3.7, osztaly:"11.E"},
-    {vNev:"Péter", kNev:"Nagy", kor:15, átlag:4, osztaly:"9.D"},
-    {vNev:"Eszter", kNev:"Tóth", kor:16, átlag:3.2, osztaly:"13.C"},
-    {vNev:"Máté", kNev:"Nagy", kor:17, átlag:5, osztaly:"12.B"}
+    {vNev:"János", kNev:"Kovács",  átlag:4.5, osztaly:"10.A"},
+    {vNev:"Anna", kNev:"Szabó",  átlag:3.7, osztaly:"11.E"},
+    {vNev:"Péter", kNev:"Nagy", átlag:4, osztaly:"9.D"},
+    {vNev:"Eszter", kNev:"Tóth",  átlag:3.2, osztaly:"13.C"},
+    {vNev:"Máté", kNev:"Nagy",  átlag:5, osztaly:"12.B"}, 
+    {vNev:"Bence", kNev:"Horváth", átlag:4.2, osztaly:"9.A"},
+    {vNev:"Lilla", kNev:"Varga", átlag:4.8, osztaly:"10.C"},
+    {vNev:"Dávid", kNev:"Kiss", átlag:3.5, osztaly:"11.B"},
+    {vNev:"Nóra", kNev:"Molnár", átlag:4.6, osztaly:"12.D"},
+    {vNev:"Zoltán", kNev:"Németh", átlag:3.9, osztaly:"13.A"},
+    {vNev:"Réka", kNev:"Farkas", átlag:4.1, osztaly:"9.E"},
+    {vNev:"Ádám", kNev:"Balogh", átlag:3.8, osztaly:"10.B"},
+    {vNev:"Petra", kNev:"Lakatos", átlag:4.7, osztaly:"11.D"},
+    {vNev:"Marcell", kNev:"Papp", átlag:4.3, osztaly:"12.A"},
+    {vNev:"Dóra", kNev:"Takács", átlag:3.6, osztaly:"13.E"},
+    {vNev:"Gergő", kNev:"Oláh", átlag:4.9, osztaly:"10.D"},
+    {vNev:"Viktória", kNev:"Simon", átlag:4.4, osztaly:"11.A"},
+    {vNev:"Tamás", kNev:"Rácz", átlag:3.3, osztaly:"12.E"},
+    {vNev:"Laura", kNev:"Fülöp", átlag:4.0, osztaly:"9.C"},
+    {vNev:"Balázs", kNev:"Sipos", átlag:3.1, osztaly:"10.E"}
 
 ];
 
