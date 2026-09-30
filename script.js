@@ -19,44 +19,7 @@ let mentes = document.getElementById("mentes");
 let torlesgomb = document.getElementById("torlesgomb");
 
 
-vnev.addEventListener("input", function()
-{
-    this.value = this.value.replace(
-        /[^a-zA-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ ]/g,
-        ""
-    );
-});
 
-
-knev.addEventListener("input", function()
-{
-    this.value = this.value.replace(
-        /[^a-zA-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ ]/g,
-        ""
-    );
-});
-osztaly.addEventListener("input", function () {
-    this.value = this.value.replace(/[^0-9A-Ea-e.]/g,
-         ""
-        );
-});
-
-function osztalyBe()
-{
-    let osztalySzam = Number(osztaly.value.split(".")[0]);
-    
-    if (isNaN(osztalySzam))
-    {
-        throw new Error("Hibás osztály formátum!");
-    }
-
-    if (osztalySzam < 9 || osztalySzam > 13)
-    {
-        throw new Error("Az osztály számának 9 és 13 között kell lennie!");
-    }
-
-    return osztaly.value;
-}
 
 
 function TanuloAtlag()
@@ -83,7 +46,7 @@ mentes.addEventListener("click", function()
     try{
 
         let nev_regex = /^[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+$/;
-        //let osztaly_regex = /^[9-1]/;
+        let osztaly_regex = /^(?:9|1[0-3])\.[A-Ea-e]$/;
         TanuloAtlag();
         
         if(vnev.value === "" || knev.value === "" || osztaly.value === "" || tanulmanyiatlag.value === ""){
@@ -95,9 +58,9 @@ mentes.addEventListener("click", function()
         else if(!nev_regex.test(knev.value)){
             throw new Error("Nagybetűvel kell kezdődnie a keresztnévnek");
         }
-        // else if(!osztaly_regex.test(osztaly.value)){
-        //     throw new Error("Hibás osztály formátum!");
-        // }
+        else if(!osztaly_regex.test(osztaly.value)){
+            throw new Error("Hibás osztály formátum! Példa: 10.A");
+        }
 
 
 
