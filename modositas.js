@@ -52,24 +52,12 @@ modositbtn.forEach(modositbtn =>
 //    megsegomb.style.display = "none";
 //    tablazatfeltoltese();
 // });
-mentes.addEventListener("click", function()
-{
-    try
-    {
-        if (vnev.value === "" || knev.value === "")
-        {
-            throw new Error("A név megadása kötelező!");
-        }
 
-        let ujTanulo = {
-            vNev: vnev.value,
-            kNev: knev.value,
-            osztaly: osztalyBe(),
-            átlag: TanuloAtlag()
-        };
+const tabla = document.getElementById("student-table-body");
 
-        tanulok.push(ujTanulo);
+tabla.addEventListener("click", function (e) {
 
+<<<<<<< HEAD
         alert("A tanuló sikeresen mentve!");
 
         function tablazatfeltoltese() {
@@ -185,17 +173,51 @@ torlesGomb.forEach(gomb => {
     gomb.addEventListener("click", function () {
 
         let sor = gomb.closest("tr");
+=======
+    // TÖRLÉS
+    if (e.target.classList.contains("torlesgomb")) {
+>>>>>>> 9eec4daf2294da77f145e8618eeb86bbbfb306c6
 
+        let sor = e.target.closest("tr");
         let sorIndex = sor.rowIndex - 1;
 
         tanulok.splice(sorIndex, 1);
 
-        sor.remove();
+        tablazatfeltoltese();
 
         alert("A tanuló törölve!");
-    });
+    }
+
+
+    // MÓDOSÍTÁS
+    if (e.target.classList.contains("modositgomb")) {
+
+        let sor = e.target.closest("tr");
+
+        let vnevKi = sor.querySelector(".vnevKi");
+        let knevKi = sor.querySelector(".knevKi");
+        let osztalyKi = sor.querySelector(".osztalyKi");
+        let tanulmanyiatlagKi = sor.querySelector(".tanulmanyiatlagKi");
+
+        vnevKi.innerHTML =
+            `<input type="text" class="vnev_modify" value="${vnevKi.textContent}">`;
+
+        knevKi.innerHTML =
+            `<input type="text" class="knev_modify" value="${knevKi.textContent}">`;
+
+        osztalyKi.innerHTML =
+            `<input type="text" class="osztaly_modify" value="${osztalyKi.textContent}">`;
+
+        tanulmanyiatlagKi.innerHTML =
+            `<input type="text" class="tanulmanyiatlag_modify" value="${tanulmanyiatlagKi.textContent}">`;
+    }
+
+
+
+    
 
 });
+
 
 
 
