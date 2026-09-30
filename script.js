@@ -35,12 +35,16 @@ knev.addEventListener("input", function()
         ""
     );
 });
-
+osztaly.addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9A-Ea-e.]/g,
+         ""
+        );
+});
 
 function osztalyBe()
 {
     let osztalySzam = Number(osztaly.value.split(".")[0]);
-
+    
     if (isNaN(osztalySzam))
     {
         throw new Error("Hibás osztály formátum!");
