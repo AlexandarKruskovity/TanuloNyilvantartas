@@ -57,7 +57,6 @@ const tabla = document.getElementById("student-table-body");
 
 tabla.addEventListener("click", function (e) {
 
-<<<<<<< HEAD
         alert("A tanuló sikeresen mentve!");
 
         function tablazatfeltoltese() {
@@ -173,10 +172,6 @@ torlesGomb.forEach(gomb => {
     gomb.addEventListener("click", function () {
 
         let sor = gomb.closest("tr");
-=======
-    // TÖRLÉS
-    if (e.target.classList.contains("torlesgomb")) {
->>>>>>> 9eec4daf2294da77f145e8618eeb86bbbfb306c6
 
         let sor = e.target.closest("tr");
         let sorIndex = sor.rowIndex - 1;
