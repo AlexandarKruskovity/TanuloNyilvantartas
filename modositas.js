@@ -52,7 +52,54 @@ modositbtn.forEach(modositbtn =>
 //    megsegomb.style.display = "none";
 //    tablazatfeltoltese();
 // });
+mentes.addEventListener("click", function()
+{
+    try
+    {
+        if (vnev.value === "" || knev.value === "")
+        {
+            throw new Error("A név megadása kötelező!");
+        }
 
+        let ujTanulo = {
+            vNev: vnev.value,
+            kNev: knev.value,
+            osztaly: osztalyBe(),
+            átlag: TanuloAtlag()
+        };
+
+        tanulok.push(ujTanulo);
+
+        alert("A tanuló sikeresen mentve!");
+
+        function tablazatfeltoltese() {
+    document.getElementById("student-table-body").innerHTML = tanulok.map((tanulo) => `
+        <tr>
+            <td class="vnevKi">${tanulo.vNev}</td>
+            <td class="knevKi">${tanulo.kNev}</td>
+            <td class="osztalyKi">${tanulo.osztaly}</td>
+            <td class="tanulmanyiatlagKi">${tanulo["átlag"]}</td>
+            <td class="actions">
+                <button class="modositgomb">Módosítás</button>
+                <button class="torlesgomb">Törlés</button>
+                <button class="modositas_mentese">Mentés</button>
+            </td>
+        </tr>
+    `).join("");
+}
+
+tablazatfeltoltese();
+
+        vnev.value = "";
+        knev.value = "";
+        osztaly.value = "";
+        tanulmanyiatlag.value = "";
+    }
+    catch (e)
+    {
+        alert(e.message);
+    }
+});
 
 let modositas_mentese = document.querySelectorAll(".modositas_mentese");
 
@@ -98,6 +145,32 @@ modositas_mentese.forEach(modositas_mentese => modositas_mentese.addEventListene
 
             
 }))
+const torlesGomb = document.querySelectorAll('.torlesgomb');
+try {
+        knev.value = "";
+        osztaly.value = "";
+        tanulmanyiatlag.value = "";
+} catch (e) {
+        alert(e.message);
+}
+
+
+torlesGomb.forEach(gomb => {
+
+    gomb.addEventListener("click", function () {
+
+        let sor = gomb.closest("tr");
+
+        let sorIndex = sor.rowIndex - 1;
+
+        tanulok.splice(sorIndex, 1);
+
+        sor.remove();
+
+        alert("A tanuló törölve!");
+    });
+
+});
 
 
 
