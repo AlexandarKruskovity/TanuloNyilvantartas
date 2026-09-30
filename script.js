@@ -78,6 +78,54 @@ function TanuloAtlag()
 
 
 
+mentes.addEventListener("click", function()
+{
+    try{
+
+        let nev_regex = /^[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+$/;
+        //let osztaly_regex = /^[9-1]/;
+        TanuloAtlag();
+        
+        if(vnev.value === "" || knev.value === "" || osztaly.value === "" || tanulmanyiatlag.value === ""){
+            throw new Error("Minden mezőt ki kell tölteni!");   
+        }
+        else if(!nev_regex.test(vnev.value) ){
+            throw new Error("Nagybetűvel kell kezdődnie a vezetéknévnek");
+        }
+        else if(!nev_regex.test(knev.value)){
+            throw new Error("Nagybetűvel kell kezdődnie a keresztnévnek");
+        }
+        // else if(!osztaly_regex.test(osztaly.value)){
+        //     throw new Error("Hibás osztály formátum!");
+        // }
+
+
+
+
+        tanulok.push({
+            vNev: vnev.value,
+            kNev: knev.value,
+            osztaly: osztaly.value,
+            átlag: TanuloAtlag()
+        });
+        tablazatfeltoltese();
+        vnev.value = "";
+        knev.value = "";
+        osztaly.value = "";
+        tanulmanyiatlag.value = "";
+
+    }
+    catch (error)
+    {
+        alert(error.message);
+        return;
+    }
+
+
+
+})
+
+
 
 
 
