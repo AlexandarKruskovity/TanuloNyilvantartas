@@ -131,25 +131,37 @@ modositas_mentese.forEach(modositas_mentese => modositas_mentese.addEventListene
             console.log("Tanulmányi átlag: " + tanulmanyiatlagki_m.value);
 
 
-            let sor=modositbtn.closest("tr");
-            sor.querySelector(".vnevKi").textContent = vnevki_m.value;
-            sor.querySelector(".knevKi").textContent = knevki_m.value;
-            sor.querySelector(".osztalyKi").textContent = osztalyki_m.value;
-            sor.querySelector(".tanulmanyiatlagKi").textContent = tanulmanyiatlagki_m.value;
 
 
             
 
 
+            
+            let vnevki_mvalue = vnevki_m.value;
+            let knevki_mvalue = knevki_m.value;
+            let osztalyki_mvalue = osztalyki_m.value;
+            let tanulmanyiatlagki_mvalue = tanulmanyiatlagki_m.value;
 
+            
+            
 
-            // tanulok.push({
-            //     vNev: vnevki_m.value,
-            //     kNev: knevki_m.value,
-            //     osztaly: osztalyki_m.value,
-            //     átlag: tanulmanyiatlagki_m.value
-            // }); 
-            tablazatfeltoltese();
+            modositas_mentese.closest("tr").innerHTML =`
+                
+                    <td class="vnevKi">${vnevki_mvalue}</td>
+                    <td class="knevKi">${knevki_mvalue}</td>
+                    <td class="osztalyKi">${osztalyki_mvalue}</td>
+                    <td class="tanulmanyiatlagKi">${tanulmanyiatlagki_mvalue}</td>
+                    <td class="actions">
+                        <button class="modositgomb" >Módosítás</button>
+                        <button class="torlesgomb" >Törlés</button>
+                        <button class="modositas_mentese" >Mentés</button>
+                    </td>
+               
+            `;
+
+           
+
+            
 
     }
     catch(e){
