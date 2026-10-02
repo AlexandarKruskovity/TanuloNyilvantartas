@@ -111,15 +111,58 @@ let osztalyatlag = document.getElementById("osztalyatlag");
 let legjobb_tanulo = document.getElementById("legjobb_tanulo");
 
 
-tanulok_szama.textContent+= tanulok.length;
+let tanulokszama = () => {
+    tanulok_szama.textContent = `A tanulók száma: ${tanulok.length}`;
+}
+tanulokszama();
+
+
+
+let db=0;
+let atlag= 0;
+let osszes = 0;
+
+let tanulokatlaga = () => {
+    
+    for(let i = 0; i < tanulok.length; i++)
+    {
+    db++;
+    
+    osszes += tanulok[i].átlag;
+    
+    
+   
+    }
+  
+    osztalyatlag.textContent = `Az osztály átlaga: ${Math.round(osszes / db * 100) / 100}`;
+    osszes = 0;
+    db = 0;
+   
+}
+
+  tanulokatlaga();
+
+
+let legjobbtanulo = () =>{
+    for(let i = 0; i < tanulok.length; i++)
+    {
+    if(tanulok[i].átlag > tanulok[0].átlag)
+    {
+        tanulok[0] = tanulok[i];
+        legjobb_tanulo.textContent = `A legjobb tanuló: ${tanulok[i].vNev} ${tanulok[i].kNev} - Átlag: ${tanulok[i].átlag}`;
+    }
+    }
+    }
+
+legjobbtanulo();
+
 
 frissit.addEventListener("click", function() {
-    tanulok_szama.textContent+= tanulok.length;
+    tanulok_szama.textContent = ""
+    tanulok_szama.textContent = `A tanulók száma: ${tanulok.length}`;
+    legjobbtanulo();    
+    tanulokatlaga();
 })
-
-
-
-
 
 
 
