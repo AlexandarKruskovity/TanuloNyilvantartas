@@ -10,7 +10,7 @@ function tablazatfeltoltese() {
                 <button class="modositgomb">Módosítás</button>
                 <button class="torlesgomb">Törlés</button>
                 <button class="modositas_mentese">Mentés</button>
-                <button class="megsegomb">Mégse</button>
+                <button class="megsegomb" onclick="tablazatfeltoltese()">Mégse</button>
             </td>
         </tr>
     `).join("");
@@ -25,40 +25,15 @@ tablazatfeltoltese();
 
 
 let modositbtn = document.querySelectorAll(".modositgomb");
-let megsegomb = document.querySelectorAll(".megsegomb");
-
-
-modositbtn.forEach(modositbtn => 
-    
-    modositbtn.addEventListener("click", function () {
-    
-       
-        
-    let sor=modositbtn.closest("tr");
-    let vnevKi = sor.querySelector(".vnevKi");
-    let knevKi = sor.querySelector(".knevKi");
-    let osztalyKi = sor.querySelector(".osztalyKi");
-    let tanulmanyiatlagKi = sor.querySelector(".tanulmanyiatlagKi");
-
-
-    vnevKi.innerHTML = `<input type="text" id="vnev_modify">`;
-    knevKi.innerHTML = `<input type="text" id="knev_modify">`;
-    osztalyKi.innerHTML = `<input type="text" id="osztaly_modify" >`;
-    tanulmanyiatlagKi.innerHTML = `<input  id="tanulmanyiatlag_modify">`;
-
-    
-}))
 
 
 
 
-megsegomb.forEach(megsegomb =>
-    megsegomb.addEventListener("click", function () {
-        document.querySelectorAll(".megsegomb").forEach(btn => {
-            btn.style.visibility = "hidden";
-        });
-        tablazatfeltoltese();
-    }))
+
+
+
+
+
 
 const tabla = document.getElementById("student-table-body");
 
@@ -144,6 +119,16 @@ tabla.addEventListener("click", function (e) {
     }
 
 });
+
+// document.querySelectorAll(".megsegomb").forEach(megsegomb =>
+//     megsegomb.addEventListener("click", function () {
+//         tablazatfeltoltese();
+        
+//     }))
+
+
+
+
 function kereses(event) {
     let input = document.getElementById("myInput");
     const searchTerm = event.target.value.trim().toLowerCase();
