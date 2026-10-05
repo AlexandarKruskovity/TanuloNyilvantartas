@@ -23,18 +23,6 @@ tablazatfeltoltese();
 
 
 
-
-let modositbtn = document.querySelectorAll(".modositgomb");
-
-
-
-
-
-
-
-
-
-
 const tabla = document.getElementById("student-table-body");
 
 tabla.addEventListener("click", function (e) {
@@ -120,17 +108,12 @@ tabla.addEventListener("click", function (e) {
 
 });
 
-// document.querySelectorAll(".megsegomb").forEach(megsegomb =>
-//     megsegomb.addEventListener("click", function () {
-//         tablazatfeltoltese();
-        
-//     }))
 
 
 
 
 function kereses(event) {
-    let input = document.getElementById("myInput");
+    
     const searchTerm = event.target.value.trim().toLowerCase();
     const items = document.querySelectorAll("#student-table-body tr");
 
