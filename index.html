@@ -9,8 +9,9 @@
 <body>
     <Center><h1>Tanulói nyilvántartás</h1></Center>
     <div class="inputs" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; margin:auto;">
-        <input id="nev" placeholder="Keresztnév">
         <input id="knev" placeholder="Vezetéknév">
+        <input id="nev" placeholder="Keresztnév">
+        
         <input id="osztaly" placeholder="Osztály">
         <input id="tanulmanyiatlag" placeholder="Tanulmányi átlag">
     </div>
@@ -18,7 +19,7 @@
     
     
     <Center><button id="mentes" style="margin:40px; width: 200px;">Mentés</button></Center>
-    <center><input type="text" id="myInput" onkeyup="kereses()" placeholder="Tanuló keresése..." title="Type in a name"></center>
+    <center><input type="text" id="myInput" oninput="kereses(event)" placeholder="Tanuló keresése..." title="Type in a name"></center>
 
     <br>
         
@@ -44,20 +45,20 @@
     
     <div style="display: flex; flex-direction: row;  width: 100%; margin-bottom: 20px; justify-content: center; gap: 200px;">
         
-        <div class="statistics" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; ">
-            <h3>Általános statisztikák</h3>
-            <p id="tanulok_szama"></p>
-            <p id="osztalyatlag">Osztály átlag: </p>
-            <p id="legjobb_tanulo">Legjobb tanuló: </p>
+        <div class="statistics" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; border:1px solid; padding: 20px; ">
+            <h3 style="text-align: center;">Általános statisztikák</h3>
+            <p id="tanulok_szama" style="text-align: center;"></p>
+            <p id="osztalyatlag" style="text-align: center;">Osztály átlag: </p>
+            <p id="legjobb_tanulo" style="text-align: center;">Legjobb tanuló: </p>
         </div>
 
 
-        <div class="statistics" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; ">
-            <h3 >Jegystatisztikák</h3>
-            <p id="jo_tanulo"></p>
-            <p id="kozepes_tanulo"></p>
-            <p id="elegseges_tanulo"></p>
-            <p id="elegtelen_tanulo"></p>
+        <div class="statistics" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; border:1px solid; padding: 20px;">
+            <h3 style="text-align: center;">Jegystatisztikák</h3>
+            <p id="jo_tanulo" style="text-align: center;"></p>
+            <p id="kozepes_tanulo" style="text-align: center;"></p>
+            <p id="elegseges_tanulo" style="text-align: center;"></p>
+            <p id="elegtelen_tanulo" style="text-align: center;"></p>
         </div>
     </div>
         

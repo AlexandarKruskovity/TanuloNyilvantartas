@@ -68,12 +68,25 @@ mentes.addEventListener("click", function()
             throw new Error("Minden mezőt ki kell tölteni!");   
         }
         else if(!nev_regex.test(vnev.value) ){
+            vnev.value = "";
+            knev.value = "";
+            osztaly.value = "";
+            tanulmanyiatlag.value = "";
             throw new Error("Nagybetűvel kell kezdődnie a vezetéknévnek");
+            
         }
         else if(!nev_regex.test(knev.value)){
+            vnev.value = "";
+            knev.value = "";
+            osztaly.value = "";
+            tanulmanyiatlag.value = "";
             throw new Error("Nagybetűvel kell kezdődnie a keresztnévnek");
         }
         else if(!osztaly_regex.test(osztaly.value)){
+            vnev.value = "";
+            knev.value = "";
+            osztaly.value = "";
+            tanulmanyiatlag.value = "";
             throw new Error("Hibás osztály formátum! Példa: 10.A");
         }
 
