@@ -375,3 +375,51 @@ let elegtelen_tanulok_szama = () =>{
     document.getElementById("elegtelen_tanulo").textContent = `Elegtelen tanulók száma: ${db}`;
 }
 elegtelen_tanulok_szama();
+
+
+
+
+document.getElementById("rendezes-atlag-szerint").addEventListener("click", function() {
+    tanulok.sort((a, b) => b.átlag - a.átlag);
+    tablazatfeltoltese();
+});
+
+document.getElementById("rendezes-nev-szerint").addEventListener("click", function() {
+    tanulok.sort((a, b) => {
+        let nevA = a.vNev.toLowerCase();
+        let nevB = b.vNev.toLowerCase();
+        if (nevA < nevB) return -1;
+        if (nevA > nevB) return 1;
+        return 0;
+    });
+    tablazatfeltoltese();
+});
+
+document.getElementById("csak-kitunok").addEventListener("click", function() {
+    let kitunok = tanulok.filter(tanulo => tanulo.átlag >= 4.5);
+    document.getElementById("student-table-body").innerHTML = kitunok.map((tanulo) => `<tr>
+        <td>${tanulo.kNev}</td>
+        <td>${tanulo.vNev}</td>
+        <td>${tanulo.osztaly}</td>
+        <td>${tanulo.átlag}</td>
+        <td>
+            <button onclick="modositas(${tanulo.id})">Módosítás</button>
+            <button onclick="torles(${tanulo.id})">Törlés</button>
+        </td>
+    </tr>`).join("");  })
+
+
+
+document.getElementById("beszinezes").addEventListener("click", function() {
+    for (let i = 0; i < tanulok.length; i++) {
+        if(tanulok[i].átlag >= 4.5){
+            document.getElementById("student-table-body").rows[i].style.backgroundColor = "green";
+        }
+        else if(tanulok[i].átlag <2){
+            document.getElementById("student-table-body").rows[i].style.backgroundColor = "red";
+        }
+    }
+    
+
+
+})
