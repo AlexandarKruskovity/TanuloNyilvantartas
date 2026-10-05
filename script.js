@@ -260,13 +260,20 @@ let db=0;
 let atlag= 0;
 let osszes = 0;
 
-let tanulokatlaga = () => {
+let osztalyatlag_fgv = () => {
     
     for(let i = 0; i < tanulok.length; i++)
     {
     db++;
     
-    osszes += tanulok[i].átlag;
+    switch(tanulok[i].osztaly)
+    {
+        case "9.A":
+        case "9.B":
+        case "9.C":
+            osszes += tanulok[i].átlag;
+            break;
+    }
     
     
    
@@ -278,7 +285,7 @@ let tanulokatlaga = () => {
    
 }
 
-  tanulokatlaga();
+  osztalyatlag_fgv();
 
 
 let legjobbtanulo = () =>{
@@ -299,7 +306,7 @@ frissit.addEventListener("click", function() {
     tanulok_szama.textContent = ""
     tanulok_szama.textContent = `A tanulók száma: ${tanulok.length}`;
     legjobbtanulo();    
-    tanulokatlaga();
+    osztalyatlag_fgv();
     jeles_tanulok_szama();
     jo_tanulok_szama();
     kozepes_tanulok_szama();
