@@ -45,7 +45,7 @@ function tablazatfeltoltese() {
                 <button class="modositgomb">Módosítás</button>
                 <button class="torlesgomb">Törlés</button>
                 <button class="modositas_mentese">Mentés</button>
-                <button class="megsegomb" onclick="tablazatfeltoltese()">Mégse</button>
+                <button class="megsegomb" onclick="tablazatfeltoltese()" >Mégse</button>
             </td>
         </tr>
     `).join("");
@@ -79,8 +79,9 @@ tabla.addEventListener("click", function (e) {
     // MÓDOSÍTÁS
     if (e.target.classList.contains("modositgomb")) {
 
+       
         let sor = e.target.closest("tr");
-
+       
         let vnevKi = sor.querySelector(".vnevKi");
         let knevKi = sor.querySelector(".knevKi");
         let osztalyKi = sor.querySelector(".osztalyKi");
@@ -197,24 +198,20 @@ mentes.addEventListener("click", function()
         }
         else if(!nev_regex.test(vnev.value) ){
             vnev.value = "";
-            knev.value = "";
-            osztaly.value = "";
-            tanulmanyiatlag.value = "";
+            
             throw new Error("Nagybetűvel kell kezdődnie a vezetéknévnek");
             
         }
         else if(!nev_regex.test(knev.value)){
-            vnev.value = "";
+            
             knev.value = "";
-            osztaly.value = "";
-            tanulmanyiatlag.value = "";
+            
             throw new Error("Nagybetűvel kell kezdődnie a keresztnévnek");
         }
         else if(!osztaly_regex.test(osztaly.value)){
-            vnev.value = "";
-            knev.value = "";
+            
             osztaly.value = "";
-            tanulmanyiatlag.value = "";
+            
             throw new Error("Hibás osztály formátum! Példa: 10.A");
         }
 
