@@ -10,6 +10,7 @@ function tablazatfeltoltese() {
                 <button class="modositgomb">Módosítás</button>
                 <button class="torlesgomb">Törlés</button>
                 <button class="modositas_mentese">Mentés</button>
+                <button class="megsegomb">Mégse</button>
             </td>
         </tr>
     `).join("");
@@ -24,13 +25,15 @@ tablazatfeltoltese();
 
 
 let modositbtn = document.querySelectorAll(".modositgomb");
-
+let megsegomb = document.querySelectorAll(".megsegomb");
 
 
 modositbtn.forEach(modositbtn => 
     
     modositbtn.addEventListener("click", function () {
     
+       
+        
     let sor=modositbtn.closest("tr");
     let vnevKi = sor.querySelector(".vnevKi");
     let knevKi = sor.querySelector(".knevKi");
@@ -46,12 +49,16 @@ modositbtn.forEach(modositbtn =>
     
 }))
 
-// let megsegomb = document.getElementById("megsegomb");
 
-// megsegomb.addEventListener("click", function () {
-//    megsegomb.style.display = "none";
-//    tablazatfeltoltese();
-// });
+
+
+megsegomb.forEach(megsegomb =>
+    megsegomb.addEventListener("click", function () {
+        document.querySelectorAll(".megsegomb").forEach(btn => {
+            btn.style.visibility = "hidden";
+        });
+        tablazatfeltoltese();
+    }))
 
 const tabla = document.getElementById("student-table-body");
 

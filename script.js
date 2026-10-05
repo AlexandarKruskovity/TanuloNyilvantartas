@@ -133,7 +133,7 @@ let tanulokatlaga = () => {
     
    
     }
-  
+    
     osztalyatlag.textContent = `Az osztály átlaga: ${Math.round(osszes / db * 100) / 100}`;
     osszes = 0;
     db = 0;
@@ -162,11 +162,78 @@ frissit.addEventListener("click", function() {
     tanulok_szama.textContent = `A tanulók száma: ${tanulok.length}`;
     legjobbtanulo();    
     tanulokatlaga();
+    jeles_tanulok_szama();
+    jo_tanulok_szama();
+    kozepes_tanulok_szama();
+    elgseges_tanulok_szama();
+    elegtelen_tanulok_szama();
 })
 
 
+let jeles_tanulok_szama = () =>{
+    let db = 0;
+    for(let i = 0; i < tanulok.length; i++)
+    {
+        if(tanulok[i].átlag >= 4.5)
+        {
+            db++;
+        }
+    }
+    document.getElementById("jo_tanulo").textContent = `Jeles tanulók száma: ${db}`;
+}
+
+jeles_tanulok_szama();
 
 
 
+let jo_tanulok_szama = () =>{
+    let db = 0;
+    for(let i = 0; i < tanulok.length; i++){
+        if(tanulok[i].átlag >= 3.5 && tanulok[i].átlag < 4.49){
+            db++;
+        }
+    }
+    document.getElementById("jo_tanulo").textContent = `Jó tanulók száma: ${db}`;
+}
+
+jo_tanulok_szama();
 
 
+let kozepes_tanulok_szama = () =>{
+    let db = 0;
+    for(let i = 0; i < tanulok.length; i++){
+        if(tanulok[i].átlag >= 2.5 && tanulok[i].átlag < 3.49){
+            db++;
+        }
+    }
+    document.getElementById("kozepes_tanulo").textContent = `Közepes tanulók száma: ${db}`;
+}
+
+kozepes_tanulok_szama();
+
+
+
+let elgseges_tanulok_szama = () =>{
+    let db = 0;
+    for(let i = 0; i < tanulok.length; i++){
+        if(tanulok[i].átlag >= 2 && tanulok[i].átlag < 2.49){
+            db++;
+        }
+    }
+    document.getElementById("elegseges_tanulo").textContent = `Elégséges tanulók száma: ${db}`;
+}
+
+elgseges_tanulok_szama();
+
+
+
+let elegtelen_tanulok_szama = () =>{
+    let db = 0;
+    for(let i = 0; i < tanulok.length; i++){
+        if(tanulok[i].átlag < 2){
+            db++;
+        }
+    }
+    document.getElementById("elegtelen_tanulo").textContent = `Elegtelen tanulók száma: ${db}`;
+}
+elegtelen_tanulok_szama();

@@ -37,25 +37,34 @@
             
         </tbody>
     </table>
-    <Center><button id="megsegomb" style="margin:40px; width: 200px;">Mégse</button></Center>
+    <Center><button id="megsegomb" style="margin:40px; width: 200px; visibility: hidden;">Mégse</button></Center>
 
 
     <Center><h1>Statisztikák</h1></Center>
-    <div>
-        <div class="statistics" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; margin:auto;">
-        <p id="tanulok_szama"></p>
-        <p id="osztalyatlag">Osztály átlag: </p>
-        <p id="legjobb_tanulo">Legjobb tanuló: </p>
+    
+    <div style="display: flex; flex-direction: row;  width: 100%; margin-bottom: 20px; justify-content: center; gap: 200px;">
+        
+        <div class="statistics" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; ">
+            <h3>Általános statisztikák</h3>
+            <p id="tanulok_szama"></p>
+            <p id="osztalyatlag">Osztály átlag: </p>
+            <p id="legjobb_tanulo">Legjobb tanuló: </p>
+        </div>
+
+
+        <div class="statistics" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; ">
+            <h3 >Jegystatisztikák</h3>
+            <p id="jo_tanulo"></p>
+            <p id="kozepes_tanulo"></p>
+            <p id="elegseges_tanulo"></p>
+            <p id="elegtelen_tanulo"></p>
+        </div>
     </div>
-    <div class="statistics" style="display: flex; flex-direction: column; gap: 10px; width: 300px; margin-bottom: 20px; margin:auto;">
-        <p id="tanulok_szama"></p>
-        <p id="osztalyatlag">Osztály átlag: </p>
-        <p id="legjobb_tanulo">Legjobb tanuló: </p>
-    </div>
-    </div>
+        
+    
     
 
-    <button id="frissit">Frissít</button>
+    <Center><button id="frissit" style="margin:40px; width: 200px;">Frissít</button></Center>
     <script src="script.js"></script>
     <script src="modositas.js"></script>
    
