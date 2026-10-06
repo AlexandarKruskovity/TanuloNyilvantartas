@@ -261,27 +261,23 @@ let atlag= 0;
 let osszes = 0;
 
 let osztalyatlag_fgv = () => {
-    
-    for(let i = 0; i < tanulok.length; i++)
+    let osztaly= document.querySelector("#osztalyatlag");
+    for(let i = 0; i < osztaly.length; i++)
     {
-    db++;
+        if(osztaly[i].contains("A")){
+            osztalyatlag.textContent = `Az osztály átlaga: ${Math.round(osszes / db * 100) / 100}`;
+        }   
+       
+        
+        
+        
     
-    switch(tanulok[i].osztaly)
-    {
-        case "9.A":
-        case "9.B":
-        case "9.C":
-            osszes += tanulok[i].átlag;
-            break;
     }
     
     
-   
-    }
     
-    osztalyatlag.textContent = `Az osztály átlaga: ${Math.round(osszes / db * 100) / 100}`;
-    osszes = 0;
-    db = 0;
+    // osszes = 0;
+    // db = 0;
    
 }
 
