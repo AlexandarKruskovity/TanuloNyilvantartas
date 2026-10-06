@@ -195,14 +195,14 @@ mentes.addEventListener("click", function () {
         else if (!nev_regex.test(vnev.value)) {
             vnev.value = "";
 
-            throw new Error("Nagybetűvel kell kezdődnie a Keresztnévnek");
+            throw new Error("Hibás keresztnév formátum! ");
 
         }
         else if (!nev_regex.test(knev.value)) {
 
             knev.value = "";
 
-            throw new Error("Nagybetűvel kell kezdődnie a Vezetéknévnek");
+            throw new Error("Hibás vezetéknév formátum! ");
         }
         else if (!osztaly_regex.test(osztaly.value)) {
 
