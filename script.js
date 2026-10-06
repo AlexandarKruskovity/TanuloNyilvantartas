@@ -62,7 +62,7 @@ const tabla = document.getElementById("student-table-body");
 
 tabla.addEventListener("click", function (e) {
 
-    // TÖRLÉS
+   
     if (e.target.classList.contains("torlesgomb")) {
 
         let sor = e.target.closest("tr");
@@ -76,7 +76,7 @@ tabla.addEventListener("click", function (e) {
     }
 
 
-    // MÓDOSÍTÁS
+    
     if (e.target.classList.contains("modositgomb")) {
 
        
@@ -101,7 +101,7 @@ tabla.addEventListener("click", function (e) {
     }
 
 
-    // MENTÉS
+    
     if (e.target.classList.contains("modositas_mentese")) {
 
         let sor = e.target.closest("tr");
