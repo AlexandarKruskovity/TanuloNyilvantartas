@@ -256,28 +256,39 @@ tanulokszama();
 
 
 
-let db=0;
-let atlag= 0;
-let osszes = 0;
+
+
+
 
 let osztalyatlag_fgv = () => {
-    let osztaly= document.querySelector("#osztalyatlag");
-    for(let i = 0; i < osztaly.length; i++)
-    {
-        if(osztaly[i].contains("A")){
-            osztalyatlag.textContent = `Az osztály átlaga: ${Math.round(osszes / db * 100) / 100}`;
-        }   
-       
-        
-        
-        
     
+    const osztalyok = {
+    A: { osszeg: 0, db: 0 },
+    B: { osszeg: 0, db: 0 },
+    C: { osszeg: 0, db: 0 },
+    D: { osszeg: 0, db: 0 },
+    E: { osszeg: 0, db: 0 }
+};
+
+for (const tanulo of tanulok) {
+    const betu = tanulo.osztaly.split(".")[1]?.toUpperCase();
+    const osztaly = osztalyok[betu];
+
+    if (osztaly) {
+        osztaly.osszeg += tanulo.átlag;
+        osztaly.db++;
     }
+}
+
+for (const betu of Object.keys(osztalyok)) {
+    const { osszeg, db } = osztalyok[betu];
+    const atlag = (osszeg / db).toFixed(2) ;
+
+    document.getElementById(`${betu}_osztaly`).textContent =
+        `${betu} osztály átlaga: ${atlag}`;
+}
     
-    
-    
-    // osszes = 0;
-    // db = 0;
+
    
 }
 
