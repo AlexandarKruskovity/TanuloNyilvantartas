@@ -43,8 +43,8 @@ function tablazatfeltoltese() {
             <td class="tanulmanyiatlagKi">${tanulo["átlag"]}</td>
             <td class="actions">
                 <button class="modositgomb">Módosítás</button>
-                <button class="torlesgomb" >Törlés</button>
-                <button class="modositas_mentese">Mentés</button>
+                <button class="torlesgomb" style="background-color: red; color: white;">Törlés</button>
+                <button class="modositas_mentese" style="background-color: green; color: white;">Mentés</button>
                 <button class="megsegomb" onclick="tablazatfeltoltese()" >Mégse</button>
             </td>
         </tr>
@@ -127,6 +127,7 @@ tabla.addEventListener("click", function (e) {
             alert("A tanulmányi átlag mezőbe csak 1 és 5 közötti számot lehet írni!");
             return;
         }
+        
 
         let sorIndex = sor.rowIndex - 1;
 
@@ -323,7 +324,7 @@ let jeles_tanulok_szama = () => {
             db++;
         }
     }
-    document.getElementById("jo_tanulo").textContent = `Jeles tanulók száma: ${db}`;
+    document.getElementById("jo_tanulo").textContent = `Jeles tanulók száma: ${db}✔️`;
 }
 
 jeles_tanulok_szama();
@@ -337,7 +338,7 @@ let jo_tanulok_szama = () => {
             db++;
         }
     }
-    document.getElementById("jo_tanulo").textContent = `Jó tanulók száma: ${db}`;
+    document.getElementById("jo_tanulo").textContent = `Jó tanulók száma: ${db}✔️`;
 }
 
 jo_tanulok_szama();
@@ -350,7 +351,7 @@ let kozepes_tanulok_szama = () => {
             db++;
         }
     }
-    document.getElementById("kozepes_tanulo").textContent = `Közepes tanulók száma: ${db}`;
+    document.getElementById("kozepes_tanulo").textContent = `Közepes tanulók száma: ${db}✔️`;
 }
 
 kozepes_tanulok_szama();
@@ -364,7 +365,7 @@ let elgseges_tanulok_szama = () => {
             db++;
         }
     }
-    document.getElementById("elegseges_tanulo").textContent = `Elégséges tanulók száma: ${db}`;
+    document.getElementById("elegseges_tanulo").textContent = `Elégséges tanulók száma: ${db}✔️`;
 }
 
 elgseges_tanulok_szama();
@@ -378,7 +379,7 @@ let elegtelen_tanulok_szama = () => {
             db++;
         }
     }
-    document.getElementById("elegtelen_tanulo").textContent = `Elegtelen tanulók száma: ${db}`;
+    document.getElementById("elegtelen_tanulo").textContent = `Elegtelen tanulók száma: ${db}❌`;
 }
 elegtelen_tanulok_szama();
 
