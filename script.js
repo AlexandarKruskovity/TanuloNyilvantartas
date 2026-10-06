@@ -1,25 +1,25 @@
 ﻿let tanulok = [
 
-    {vNev:"János", kNev:"Kovács",  átlag:4.5, osztaly:"10.A"},
-    {vNev:"Anna", kNev:"Szabó",  átlag:3.7, osztaly:"11.E"},
-    {vNev:"Péter", kNev:"Nagy", átlag:4, osztaly:"9.D"},
-    {vNev:"Eszter", kNev:"Tóth",  átlag:3.2, osztaly:"13.C"},
-    {vNev:"Máté", kNev:"Nagy",  átlag:5, osztaly:"12.B"}, 
-    {vNev:"Bence", kNev:"Horváth", átlag:4.2, osztaly:"9.A"},
-    {vNev:"Lilla", kNev:"Varga", átlag:4.8, osztaly:"10.C"},
-    {vNev:"Dávid", kNev:"Kiss", átlag:3.5, osztaly:"11.B"},
-    {vNev:"Nóra", kNev:"Molnár", átlag:4.6, osztaly:"12.D"},
-    {vNev:"Zoltán", kNev:"Németh", átlag:3.9, osztaly:"13.A"},
-    {vNev:"Réka", kNev:"Farkas", átlag:4.1, osztaly:"9.E"},
-    {vNev:"Ádám", kNev:"Balogh", átlag:3.8, osztaly:"10.B"},
-    {vNev:"Petra", kNev:"Lakatos", átlag:4.7, osztaly:"11.D"},
-    {vNev:"Marcell", kNev:"Papp", átlag:4.3, osztaly:"12.A"},
-    {vNev:"Dóra", kNev:"Takács", átlag:3.6, osztaly:"13.E"},
-    {vNev:"Gergő", kNev:"Oláh", átlag:4.9, osztaly:"10.D"},
-    {vNev:"Viktória", kNev:"Simon", átlag:4.4, osztaly:"11.A"},
-    {vNev:"Tamás", kNev:"Rácz", átlag:1.7, osztaly:"12.E"},
-    {vNev:"Laura", kNev:"Fülöp", átlag:4.0, osztaly:"9.C"},
-    {vNev:"Balázs", kNev:"Sipos", átlag:3.1, osztaly:"10.E"}
+    { vNev: "János", kNev: "Kovács", átlag: 4.5, osztaly: "10.A" },
+    { vNev: "Anna", kNev: "Szabó", átlag: 3.7, osztaly: "11.E" },
+    { vNev: "Péter", kNev: "Nagy", átlag: 4, osztaly: "9.D" },
+    { vNev: "Eszter", kNev: "Tóth", átlag: 3.2, osztaly: "13.C" },
+    { vNev: "Máté", kNev: "Nagy", átlag: 5, osztaly: "12.B" },
+    { vNev: "Bence", kNev: "Horváth", átlag: 4.2, osztaly: "9.A" },
+    { vNev: "Lilla", kNev: "Varga", átlag: 4.8, osztaly: "10.C" },
+    { vNev: "Dávid", kNev: "Kiss", átlag: 3.5, osztaly: "11.B" },
+    { vNev: "Nóra", kNev: "Molnár", átlag: 2.6, osztaly: "12.D" },
+    { vNev: "Zoltán", kNev: "Németh", átlag: 3.9, osztaly: "13.A" },
+    { vNev: "Réka", kNev: "Farkas", átlag: 4.1, osztaly: "9.E" },
+    { vNev: "Ádám", kNev: "Balogh", átlag: 1.8, osztaly: "10.B" },
+    { vNev: "Petra", kNev: "Lakatos", átlag: 4.7, osztaly: "11.D" },
+    { vNev: "Marcell", kNev: "Papp", átlag: 4.3, osztaly: "12.A" },
+    { vNev: "Dóra", kNev: "Takács", átlag: 3.6, osztaly: "13.E" },
+    { vNev: "Gergő", kNev: "Oláh", átlag: 4.9, osztaly: "10.D" },
+    { vNev: "Viktória", kNev: "Simon", átlag: 4.4, osztaly: "11.A" },
+    { vNev: "Tamás", kNev: "Rácz", átlag: 1.7, osztaly: "12.E" },
+    { vNev: "Laura", kNev: "Fülöp", átlag: 4.0, osztaly: "9.C" },
+    { vNev: "Balázs", kNev: "Sipos", átlag: 3.1, osztaly: "10.E" }
 
 ];
 
@@ -43,7 +43,7 @@ function tablazatfeltoltese() {
             <td class="tanulmanyiatlagKi">${tanulo["átlag"]}</td>
             <td class="actions">
                 <button class="modositgomb">Módosítás</button>
-                <button class="torlesgomb">Törlés</button>
+                <button class="torlesgomb" >Törlés</button>
                 <button class="modositas_mentese">Mentés</button>
                 <button class="megsegomb" onclick="tablazatfeltoltese()" >Mégse</button>
             </td>
@@ -62,7 +62,7 @@ const tabla = document.getElementById("student-table-body");
 
 tabla.addEventListener("click", function (e) {
 
-   
+
     if (e.target.classList.contains("torlesgomb")) {
 
         let sor = e.target.closest("tr");
@@ -76,12 +76,12 @@ tabla.addEventListener("click", function (e) {
     }
 
 
-    
+
     if (e.target.classList.contains("modositgomb")) {
 
-       
+
         let sor = e.target.closest("tr");
-       
+
         let vnevKi = sor.querySelector(".vnevKi");
         let knevKi = sor.querySelector(".knevKi");
         let osztalyKi = sor.querySelector(".osztalyKi");
@@ -101,7 +101,7 @@ tabla.addEventListener("click", function (e) {
     }
 
 
-    
+
     if (e.target.classList.contains("modositas_mentese")) {
 
         let sor = e.target.closest("tr");
@@ -111,7 +111,7 @@ tabla.addEventListener("click", function (e) {
         let osztaly = sor.querySelector(".osztaly_modify");
         let atlag = sor.querySelector(".tanulmanyiatlag_modify");
 
-       
+
 
         if (
             vnev.value === "" ||
@@ -123,8 +123,8 @@ tabla.addEventListener("click", function (e) {
             return;
         }
 
-        if (isNaN(atlag.value)) {
-            alert("A tanulmányi átlag mezőbe csak számot lehet írni!");
+        if (isNaN(atlag.value) || (atlag.value < 1 || atlag.value > 5)) {
+            alert("A tanulmányi átlag mezőbe csak 1 és 5 közötti számot lehet írni!");
             return;
         }
 
@@ -149,34 +149,31 @@ tabla.addEventListener("click", function (e) {
 
 
 function kereses(event) {
-    
+
     const searchTerm = event.target.value.trim().toLowerCase();
     const items = document.querySelectorAll("#student-table-body tr");
 
     items.forEach(item => {
-        if(item.textContent.toLowerCase().includes(searchTerm)) {
+        if (item.textContent.toLowerCase().includes(searchTerm)) {
             item.style.display = "";
         }
-        else{
+        else {
             item.style.display = "none";
         }
     })
 
-    
+
 }
 
 
-function TanuloAtlag()
-{
+function TanuloAtlag() {
     let atlag = Number(tanulmanyiatlag.value);
 
-    if (isNaN(atlag))
-    {
+    if (isNaN(atlag)) {
         throw new Error("Nem számot adtál meg!");
     }
 
-    if (atlag < 1 || atlag > 5)
-    {
+    if (atlag < 1 || atlag > 5) {
         throw new Error("Az átlag 1 és 5 között kell lennie!");
     }
 
@@ -185,43 +182,42 @@ function TanuloAtlag()
 
 
 
-mentes.addEventListener("click", function()
-{
-    try{
+mentes.addEventListener("click", function () {
+    try {
 
         let nev_regex = /^[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+$/;
         let osztaly_regex = /^(?:9|1[0-3])\.[A-Ea-e]$/;
         TanuloAtlag();
-        
-        if(vnev.value === "" || knev.value === "" || osztaly.value === "" || tanulmanyiatlag.value === ""){
-            throw new Error("Minden mezőt ki kell tölteni!");   
+
+        if (vnev.value === "" || knev.value === "" || osztaly.value === "" || tanulmanyiatlag.value === "") {
+            throw new Error("Minden mezőt ki kell tölteni!");
         }
-        else if(!nev_regex.test(vnev.value) ){
+        else if (!nev_regex.test(vnev.value)) {
             vnev.value = "";
-            
-            throw new Error("Nagybetűvel kell kezdődnie a vezetéknévnek");
-            
+
+            throw new Error("Nagybetűvel kell kezdődnie a Keresztnévnek");
+
         }
-        else if(!nev_regex.test(knev.value)){
-            
+        else if (!nev_regex.test(knev.value)) {
+
             knev.value = "";
-            
-            throw new Error("Nagybetűvel kell kezdődnie a keresztnévnek");
+
+            throw new Error("Nagybetűvel kell kezdődnie a Vezetéknévnek");
         }
-        else if(!osztaly_regex.test(osztaly.value)){
-            
+        else if (!osztaly_regex.test(osztaly.value)) {
+
             osztaly.value = "";
-            
+
             throw new Error("Hibás osztály formátum! Példa: 10.A");
         }
 
 
         tanulok.push({
-                    vNev: vnev.value,
-                    kNev: knev.value,
-                    osztaly: osztaly.value,
-                    átlag: TanuloAtlag()
-                });
+            vNev: vnev.value,
+            kNev: knev.value,
+            osztaly: osztaly.value,
+            átlag: TanuloAtlag()
+        });
 
         tablazatfeltoltese();
 
@@ -233,8 +229,7 @@ mentes.addEventListener("click", function()
         tanulmanyiatlag.value = "";
 
     }
-    catch (error)
-    {
+    catch (error) {
         alert(error.message);
         return;
     }
@@ -261,58 +256,57 @@ tanulokszama();
 
 
 let osztalyatlag_fgv = () => {
-    
+
     const osztalyok = {
-    A: { osszeg: 0, db: 0 },
-    B: { osszeg: 0, db: 0 },
-    C: { osszeg: 0, db: 0 },
-    D: { osszeg: 0, db: 0 },
-    E: { osszeg: 0, db: 0 }
-};
+        A: { osszeg: 0, db: 0 },
+        B: { osszeg: 0, db: 0 },
+        C: { osszeg: 0, db: 0 },
+        D: { osszeg: 0, db: 0 },
+        E: { osszeg: 0, db: 0 }
+    };
 
-for (const tanulo of tanulok) {
-    const betu = tanulo.osztaly.split(".")[1].toUpperCase();
-    const osztaly = osztalyok[betu];
+    for (const tanulo of tanulok) {
+        const betu = tanulo.osztaly.split(".")[1].toUpperCase();
+        const osztaly = osztalyok[betu];
 
-    if (osztaly) {
-        osztaly.osszeg += tanulo.átlag;
-        osztaly.db++;
+        if (osztaly) {
+            osztaly.osszeg += tanulo.átlag;
+            osztaly.db++;
+        }
     }
+
+    for (const betu of Object.keys(osztalyok)) {
+        const osszeg = osztalyok[betu].osszeg;
+        const db = osztalyok[betu].db;
+        const atlag = (osszeg / db).toFixed(2);
+
+        document.getElementById(`${betu}_osztaly`).textContent =
+            `${betu} osztály átlaga: ${atlag}`;
+    }
+
+
+
 }
 
-for (const betu of Object.keys(osztalyok)) {
-    const { osszeg, db } = osztalyok[betu];
-    const atlag = (osszeg / db).toFixed(2) ;
+osztalyatlag_fgv();
 
-    document.getElementById(`${betu}_osztaly`).textContent =
-        `${betu} osztály átlaga: ${atlag}`;
+
+let legjobbtanulo = () => {
+    for (let i = 0; i < tanulok.length; i++) {
+        if (tanulok[i].átlag > tanulok[0].átlag) {
+            tanulok[0] = tanulok[i];
+            legjobb_tanulo.textContent = `A legjobb tanuló: ${tanulok[i].vNev} ${tanulok[i].kNev} - Átlag: ${tanulok[i].átlag}`;
+        }
+    }
 }
-    
-
-   
-}
-
-  osztalyatlag_fgv();
-
-
-let legjobbtanulo = () =>{
-    for(let i = 0; i < tanulok.length; i++)
-    {
-    if(tanulok[i].átlag > tanulok[0].átlag)
-    {
-        tanulok[0] = tanulok[i];
-        legjobb_tanulo.textContent = `A legjobb tanuló: ${tanulok[i].vNev} ${tanulok[i].kNev} - Átlag: ${tanulok[i].átlag}`;
-    }
-    }
-    }
 
 legjobbtanulo();
 
 
-frissit.addEventListener("click", function() {
+frissit.addEventListener("click", function () {
     tanulok_szama.textContent = ""
     tanulok_szama.textContent = `A tanulók száma: ${tanulok.length}`;
-    legjobbtanulo();    
+    legjobbtanulo();
     osztalyatlag_fgv();
     jeles_tanulok_szama();
     jo_tanulok_szama();
@@ -322,12 +316,10 @@ frissit.addEventListener("click", function() {
 })
 
 
-let jeles_tanulok_szama = () =>{
+let jeles_tanulok_szama = () => {
     let db = 0;
-    for(let i = 0; i < tanulok.length; i++)
-    {
-        if(tanulok[i].átlag >= 4.5)
-        {
+    for (let i = 0; i < tanulok.length; i++) {
+        if (tanulok[i].átlag >= 4.5) {
             db++;
         }
     }
@@ -338,10 +330,10 @@ jeles_tanulok_szama();
 
 
 
-let jo_tanulok_szama = () =>{
+let jo_tanulok_szama = () => {
     let db = 0;
-    for(let i = 0; i < tanulok.length; i++){
-        if(tanulok[i].átlag >= 3.5 && tanulok[i].átlag < 4.49){
+    for (let i = 0; i < tanulok.length; i++) {
+        if (tanulok[i].átlag >= 3.5 && tanulok[i].átlag < 4.49) {
             db++;
         }
     }
@@ -351,10 +343,10 @@ let jo_tanulok_szama = () =>{
 jo_tanulok_szama();
 
 
-let kozepes_tanulok_szama = () =>{
+let kozepes_tanulok_szama = () => {
     let db = 0;
-    for(let i = 0; i < tanulok.length; i++){
-        if(tanulok[i].átlag >= 2.5 && tanulok[i].átlag < 3.49){
+    for (let i = 0; i < tanulok.length; i++) {
+        if (tanulok[i].átlag >= 2.5 && tanulok[i].átlag < 3.49) {
             db++;
         }
     }
@@ -365,10 +357,10 @@ kozepes_tanulok_szama();
 
 
 
-let elgseges_tanulok_szama = () =>{
+let elgseges_tanulok_szama = () => {
     let db = 0;
-    for(let i = 0; i < tanulok.length; i++){
-        if(tanulok[i].átlag >= 2 && tanulok[i].átlag < 2.49){
+    for (let i = 0; i < tanulok.length; i++) {
+        if (tanulok[i].átlag >= 2 && tanulok[i].átlag < 2.49) {
             db++;
         }
     }
@@ -379,10 +371,10 @@ elgseges_tanulok_szama();
 
 
 
-let elegtelen_tanulok_szama = () =>{
+let elegtelen_tanulok_szama = () => {
     let db = 0;
-    for(let i = 0; i < tanulok.length; i++){
-        if(tanulok[i].átlag < 2){
+    for (let i = 0; i < tanulok.length; i++) {
+        if (tanulok[i].átlag < 2) {
             db++;
         }
     }
@@ -393,12 +385,12 @@ elegtelen_tanulok_szama();
 
 
 
-document.getElementById("rendezes-atlag-szerint").addEventListener("click", function() {
+document.getElementById("rendezes-atlag-szerint").addEventListener("click", function () {
     tanulok.sort((a, b) => b.átlag - a.átlag);
     tablazatfeltoltese();
 });
 
-document.getElementById("rendezes-nev-szerint").addEventListener("click", function() {
+document.getElementById("rendezes-nev-szerint").addEventListener("click", function () {
     tanulok.sort((a, b) => {
         let nevA = a.vNev.toLowerCase();
         let nevB = b.vNev.toLowerCase();
@@ -409,7 +401,7 @@ document.getElementById("rendezes-nev-szerint").addEventListener("click", functi
     tablazatfeltoltese();
 });
 
-document.getElementById("csak-kitunok").addEventListener("click", function() {
+document.getElementById("csak-kitunok").addEventListener("click", function () {
     let kitunok = tanulok.filter(tanulo => tanulo.átlag >= 4.5);
     document.getElementById("student-table-body").innerHTML = kitunok.map((tanulo) => `<tr>
         <td>${tanulo.kNev}</td>
@@ -420,20 +412,21 @@ document.getElementById("csak-kitunok").addEventListener("click", function() {
             <button onclick="modositas(${tanulo.id})">Módosítás</button>
             <button onclick="torles(${tanulo.id})">Törlés</button>
         </td>
-    </tr>`).join("");  })
+    </tr>`).join("");
+})
 
 
 
-document.getElementById("beszinezes").addEventListener("click", function() {
+document.getElementById("beszinezes").addEventListener("click", function () {
     for (let i = 0; i < tanulok.length; i++) {
-        if(tanulok[i].átlag >= 4.5){
+        if (tanulok[i].átlag >= 4.5) {
             document.getElementById("student-table-body").rows[i].style.backgroundColor = "green";
         }
-        else if(tanulok[i].átlag <2){
+        else if (tanulok[i].átlag < 2) {
             document.getElementById("student-table-body").rows[i].style.backgroundColor = "red";
         }
     }
-    
+
 
 
 })

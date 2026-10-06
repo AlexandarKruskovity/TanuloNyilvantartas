@@ -22,7 +22,17 @@
     <center><input type="text" id="myInput" oninput="kereses(event)" placeholder="Tanuló keresése..." title="Type in a name"></center>
 
     <br>
-        
+        <div style="display: flex; flex-direction: column;  width: 60%; margin-bottom: 20px; justify-content: center; gap: 20px; margin:auto;">
+        <h2 style="text-align: center;">További lehetőségek</h2>
+        <div style="display: flex; flex-direction: row;  width: 100%; margin-bottom: 20px; justify-content: center; gap: 20px;">
+            <button id="rendezes-atlag-szerint">Rendezés átlag szerint</button>
+            <button id="rendezes-nev-szerint">Rendezés név szerint</button>
+            <button id="csak-kitunok">Csak kitűnő tanulók</button>
+            <button id="beszinezes">Beszínezés</button>
+            
+        </div>
+         <Center><button id="frissit" style="margin:40px; width: 200px;">Frissít</button></Center>
+    </div>
      <table class="student-table" aria-label="Tanulói nyilvántartás" style="width: 80%; margin: auto; border-collapse: collapse; border: 1px solid #ccc;">
         <thead >
             <tr>
@@ -70,18 +80,9 @@
     
     
 
-    <Center><button id="frissit" style="margin:40px; width: 200px;">Frissít</button></Center>
+   
 
-    <div style="display: flex; flex-direction: column;  width: 60%; margin-bottom: 20px; justify-content: center; gap: 20px; margin:auto;">
-        <h2 style="text-align: center;">További lehetőségek</h2>
-        <div style="display: flex; flex-direction: row;  width: 100%; margin-bottom: 20px; justify-content: center; gap: 20px;">
-            <button id="rendezes-atlag-szerint">Rendezés átlag szerint</button>
-            <button id="rendezes-nev-szerint">Rendezés név szerint</button>
-            <button id="csak-kitunok">Csak kitűnő tanulók</button>
-            <button id="beszinezes">Beszínezés</button>
-        </div>
-        
-    </div>
+    
     
     <script src="script.js"></script>
     
