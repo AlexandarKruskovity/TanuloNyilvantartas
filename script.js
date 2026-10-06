@@ -17,7 +17,7 @@
     {vNev:"Dóra", kNev:"Takács", átlag:3.6, osztaly:"13.E"},
     {vNev:"Gergő", kNev:"Oláh", átlag:4.9, osztaly:"10.D"},
     {vNev:"Viktória", kNev:"Simon", átlag:4.4, osztaly:"11.A"},
-    {vNev:"Tamás", kNev:"Rácz", átlag:3.3, osztaly:"12.E"},
+    {vNev:"Tamás", kNev:"Rácz", átlag:1.7, osztaly:"12.E"},
     {vNev:"Laura", kNev:"Fülöp", átlag:4.0, osztaly:"9.C"},
     {vNev:"Balázs", kNev:"Sipos", átlag:3.1, osztaly:"10.E"}
 
