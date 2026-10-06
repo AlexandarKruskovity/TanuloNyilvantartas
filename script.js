@@ -271,7 +271,7 @@ let osztalyatlag_fgv = () => {
 };
 
 for (const tanulo of tanulok) {
-    const betu = tanulo.osztaly.split(".")[1]?.toUpperCase();
+    const betu = tanulo.osztaly.split(".")[1].toUpperCase();
     const osztaly = osztalyok[betu];
 
     if (osztaly) {
