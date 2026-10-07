@@ -377,15 +377,15 @@ document.getElementById("rendezes-atlag-szerint").addEventListener("click", func
 });
 
 document.getElementById("rendezes-nev-szerint").addEventListener("click", function () {
-    let nevSzerint=nev.value.split(" ");
-    tanulok.sort((nevSzerint) => {
-    
-       let nevA = nevSzerint[0].toLowerCase();
-        let nevB = nevSzerint[1].toLowerCase();
+    tanulok.sort((a, b) => {
+        let nevA = (a.Nev + " " + a.Nev).toLowerCase();
+        let nevB = (b.Nev + " " + b.Nev).toLowerCase();
+
         if (nevA < nevB) return -1;
         if (nevA > nevB) return 1;
         return 0;
     });
+
     tablazatfeltoltese();
 });
 
