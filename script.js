@@ -178,7 +178,7 @@ function TanuloAtlag() {
 mentes.addEventListener("click", function () {
     try {
 
-        let nev_regex = /^[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+$/;
+        let nev_regex = /^[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+( [A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+)*$/;
         let osztaly_regex = /^(?:9|1[0-3])\.[A-Ea-e]$/;
         TanuloAtlag();
 
@@ -186,17 +186,12 @@ mentes.addEventListener("click", function () {
             throw new Error("Minden mezőt ki kell tölteni!");
         }
         else if (!nev_regex.test(nev.value)) {
-            nevf.value = "";
+            nev.value = "";
 
-            throw new Error("Hibás keresztnév formátum! ");
+            throw new Error("Hibás a név formátuma! ");
 
         }
-        else if (!nev_regex.test(knev.value)) {
-
-            knev.value = "";
-
-            throw new Error("Hibás vezetéknév formátum! ");
-        }
+       
         else if (!osztaly_regex.test(osztaly.value)) {
 
             osztaly.value = "";
@@ -215,7 +210,7 @@ mentes.addEventListener("click", function () {
 
 
 
-      Nev.value = "";
+        nev.value = "";
         osztaly.value = "";
         tanulmanyiatlag.value = "";
 
@@ -286,7 +281,7 @@ let legjobbtanulo = () => {
     for (let i = 0; i < tanulok.length; i++) {
         if (tanulok[i].átlag > tanulok[0].átlag) {
             tanulok[0] = tanulok[i];
-            legjobb_tanulo.textContent = `A legjobb tanuló: ${tanulok[i].vNev} ${tanulok[i].kNev} - Átlag: ${tanulok[i].átlag}`;
+            legjobb_tanulo.textContent = `A legjobb tanuló: ${tanulok[i].Nev} - Átlag: ${tanulok[i].átlag}`;
         }
     }
 }
@@ -382,9 +377,11 @@ document.getElementById("rendezes-atlag-szerint").addEventListener("click", func
 });
 
 document.getElementById("rendezes-nev-szerint").addEventListener("click", function () {
-    tanulok.sort((a, b) => {
-        let nevA = a.vNev.toLowerCase();
-        let nevB = b.vNev.toLowerCase();
+    let nevSzerint=nev.value.split(" ");
+    tanulok.sort((nevSzerint) => {
+    
+       let nevA = nevSzerint[0].toLowerCase();
+        let nevB = nevSzerint[1].toLowerCase();
         if (nevA < nevB) return -1;
         if (nevA > nevB) return 1;
         return 0;
