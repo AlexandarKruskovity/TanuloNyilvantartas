@@ -1,30 +1,29 @@
 ﻿let tanulok = [
 
-    { vNev: "János", kNev: "Kovács", átlag: 4.5, osztaly: "10.A" },
-    { vNev: "Anna", kNev: "Szabó", átlag: 3.7, osztaly: "11.E" },
-    { vNev: "Péter", kNev: "Nagy", átlag: 4, osztaly: "9.D" },
-    { vNev: "Eszter", kNev: "Tóth", átlag: 3.2, osztaly: "13.C" },
-    { vNev: "Máté", kNev: "Nagy", átlag: 5, osztaly: "12.B" },
-    { vNev: "Bence", kNev: "Horváth", átlag: 4.2, osztaly: "9.A" },
-    { vNev: "Lilla", kNev: "Varga", átlag: 4.8, osztaly: "10.C" },
-    { vNev: "Dávid", kNev: "Kiss", átlag: 3.5, osztaly: "11.B" },
-    { vNev: "Nóra", kNev: "Molnár", átlag: 2.6, osztaly: "12.D" },
-    { vNev: "Zoltán", kNev: "Németh", átlag: 3.9, osztaly: "13.A" },
-    { vNev: "Réka", kNev: "Farkas", átlag: 4.1, osztaly: "9.E" },
-    { vNev: "Ádám", kNev: "Balogh", átlag: 1.8, osztaly: "10.B" },
-    { vNev: "Petra", kNev: "Lakatos", átlag: 4.7, osztaly: "11.D" },
-    { vNev: "Marcell", kNev: "Papp", átlag: 4.3, osztaly: "12.A" },
-    { vNev: "Dóra", kNev: "Takács", átlag: 3.6, osztaly: "13.E" },
-    { vNev: "Gergő", kNev: "Oláh", átlag: 4.9, osztaly: "10.D" },
-    { vNev: "Viktória", kNev: "Simon", átlag: 4.4, osztaly: "11.A" },
-    { vNev: "Tamás", kNev: "Rácz", átlag: 1.7, osztaly: "12.E" },
-    { vNev: "Laura", kNev: "Fülöp", átlag: 4.0, osztaly: "9.C" },
-    { vNev: "Balázs", kNev: "Sipos", átlag: 3.1, osztaly: "10.E" }
+    { Nev: "Kovács János", átlag: 4.5, osztaly: "10.A" },
+    { Nev: "Szabó Anna", átlag: 3.7, osztaly: "11.E" },
+    { Nev: "Nagy Péter", átlag: 4, osztaly: "9.D" },
+    { Nev: "Tóth Eszter", átlag: 3.2, osztaly: "13.C" },
+    { Nev: "Nagy Máté", átlag: 5, osztaly: "12.B" },
+    { Nev: "Horváth Bence", átlag: 4.2, osztaly: "9.A" },
+    { Nev: "Varga Lilla", átlag: 4.8, osztaly: "10.C" },
+    { Nev: "Kiss Dávid", átlag: 3.5, osztaly: "11.B" },
+    { Nev: "Molnár Nóra", átlag: 2.6, osztaly: "12.D" },
+    { Nev: "Németh Zoltán", átlag: 3.9, osztaly: "13.A" },
+    { Nev: "Farkas Réka", átlag: 4.1, osztaly: "9.E" },
+    { Nev: "Balogh Ádám", átlag: 1.8, osztaly: "10.B" },
+    { Nev: "Lakatos Petra", átlag: 4.7, osztaly: "11.D" },
+    { Nev: "Papp Marcell", átlag: 4.3, osztaly: "12.A" },
+    { Nev: "Takács Dóra", átlag: 3.6, osztaly: "13.E" },
+    { Nev: "Oláh Gergő", átlag: 4.9, osztaly: "10.D" },
+    { Nev: "Simon Viktória", átlag: 4.4, osztaly: "11.A" },
+    { Nev: "Rácz Tamás", átlag: 1.7, osztaly: "12.E" },
+    { Nev: "Fülöp Laura", átlag: 4.0, osztaly: "9.C" },
+    { Nev: "Sipos Balázs", átlag: 3.1, osztaly: "10.E" }
 
 ];
 
-let vnev = document.getElementById("nev");
-let knev = document.getElementById("knev");
+let nev = document.getElementById("nev");
 let osztaly = document.getElementById("osztaly");
 let tanulmanyiatlag = document.getElementById("tanulmanyiatlag");
 
@@ -37,8 +36,7 @@ let torlesgomb = document.getElementById("torlesgomb");
 function tablazatfeltoltese() {
     document.getElementById("student-table-body").innerHTML = tanulok.map((tanulo) => `
         <tr>
-            <td class="vnevKi">${tanulo.vNev}</td>
-            <td class="knevKi">${tanulo.kNev}</td>
+            <td class="nevKi">${tanulo.Nev }</td>
             <td class="osztalyKi">${tanulo.osztaly}</td>
             <td class="tanulmanyiatlagKi">${tanulo["átlag"]}</td>
             <td class="actions">
@@ -82,16 +80,13 @@ tabla.addEventListener("click", function (e) {
 
         let sor = e.target.closest("tr");
 
-        let vnevKi = sor.querySelector(".vnevKi");
-        let knevKi = sor.querySelector(".knevKi");
+        let nevKi = sor.querySelector(".nevKi");
+        
         let osztalyKi = sor.querySelector(".osztalyKi");
         let tanulmanyiatlagKi = sor.querySelector(".tanulmanyiatlagKi");
 
-        vnevKi.innerHTML =
-            `<input type="text" class="vnev_modify" value="${vnevKi.textContent}">`;
-
-        knevKi.innerHTML =
-            `<input type="text" class="knev_modify" value="${knevKi.textContent}">`;
+        nevKi.innerHTML =
+            `<input type="text" class="nev_modify" value="${nevKi.textContent}">`;
 
         osztalyKi.innerHTML =
             `<input type="text" class="osztaly_modify" value="${osztalyKi.textContent}">`;
@@ -106,16 +101,14 @@ tabla.addEventListener("click", function (e) {
 
         let sor = e.target.closest("tr");
 
-        let vnev = sor.querySelector(".vnev_modify");
-        let knev = sor.querySelector(".knev_modify");
+        let nev = sor.querySelector(".nev_modify");
         let osztaly = sor.querySelector(".osztaly_modify");
         let atlag = sor.querySelector(".tanulmanyiatlag_modify");
 
 
 
         if (
-            vnev.value === "" ||
-            knev.value === "" ||
+            nev.value === "" ||
             osztaly.value === "" ||
             atlag.value === ""
         ) {
@@ -132,8 +125,7 @@ tabla.addEventListener("click", function (e) {
         let sorIndex = sor.rowIndex - 1;
 
         tanulok[sorIndex] = {
-            vNev: vnev.value,
-            kNev: knev.value,
+            Nev: nev.value,
             osztaly: osztaly.value,
             átlag: Number(atlag.value)
         };
@@ -190,11 +182,11 @@ mentes.addEventListener("click", function () {
         let osztaly_regex = /^(?:9|1[0-3])\.[A-Ea-e]$/;
         TanuloAtlag();
 
-        if (vnev.value === "" || knev.value === "" || osztaly.value === "" || tanulmanyiatlag.value === "") {
+        if (nev.value === "" || osztaly.value === "" || tanulmanyiatlag.value === "") {
             throw new Error("Minden mezőt ki kell tölteni!");
         }
-        else if (!nev_regex.test(vnev.value)) {
-            vnev.value = "";
+        else if (!nev_regex.test(nev.value)) {
+            nevf.value = "";
 
             throw new Error("Hibás keresztnév formátum! ");
 
@@ -214,8 +206,7 @@ mentes.addEventListener("click", function () {
 
 
         tanulok.push({
-            vNev: vnev.value,
-            kNev: knev.value,
+           Nev: nev.value,
             osztaly: osztaly.value,
             átlag: TanuloAtlag()
         });
@@ -224,8 +215,7 @@ mentes.addEventListener("click", function () {
 
 
 
-        vnev.value = "";
-        knev.value = "";
+      Nev.value = "";
         osztaly.value = "";
         tanulmanyiatlag.value = "";
 
@@ -405,8 +395,7 @@ document.getElementById("rendezes-nev-szerint").addEventListener("click", functi
 document.getElementById("csak-kitunok").addEventListener("click", function () {
     let kitunok = tanulok.filter(tanulo => tanulo.átlag >= 4.5);
     document.getElementById("student-table-body").innerHTML = kitunok.map((tanulo) => `<tr>
-        <td>${tanulo.kNev}</td>
-        <td>${tanulo.vNev}</td>
+        <td>${tanulo.Nev}</td>
         <td>${tanulo.osztaly}</td>
         <td>${tanulo.átlag}</td>
         <td>
